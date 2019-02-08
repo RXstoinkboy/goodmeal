@@ -15,17 +15,17 @@ const App = () => (
     render={({location})=> (
       <React.Fragment>
       <Navbar />
-      <PoseGroup>
-        <RoutesContainer key={location.key}>
-          <Switch location={location}>
+        <PoseGroup>
+          <RoutesContainer key={location.key}>
+            <Switch location={location}>
               <Route exact path='/' component={Hero} key='home'/>
-             <Route path='/recipes' component={Recipes} key='recipes' />
-             <Route path='/news' component={News} key='news'/>
-             <Route path='/about' component={About} key='about' />
-             <Route path='/contact' component={Contact} key='contact' />
-          </Switch>
-        </RoutesContainer>
-      </PoseGroup>
+              <Route path='/recipes' component={Recipes} key='recipes' />
+              <Route path='/news' component={News} key='news'/>
+              <Route path='/about' component={About} key='about' />
+              <Route path='/contact' component={Contact} key='contact' />
+            </Switch>
+          </RoutesContainer>
+        </PoseGroup>
       </React.Fragment>
     )}
   />

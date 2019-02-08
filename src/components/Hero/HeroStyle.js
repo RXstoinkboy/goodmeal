@@ -6,7 +6,7 @@ export const Header = styled.div`
     position: relative;
     top: 0;
     left: 0;
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     text-align: center;
@@ -29,7 +29,18 @@ export const Header = styled.div`
     }
 `
 
-export const Title = styled.h1`
+export const PosedTitle = posed.h1({
+    enter: {
+        y: 0,
+        opacity: 1
+    },
+    exit: {
+        y: 100,
+        opacity:0
+    }
+})
+
+export const Title = styled(PosedTitle)`
     margin: 0;
     font-size: 7rem;
     color: white;
@@ -43,7 +54,17 @@ export const Title = styled.h1`
     }
 `
 
-export const Subtitle = styled.h2`
+export const PosedSubtitle = posed.h2({
+    enter: {
+        y: 0,
+        opacity: 1},
+    exit: {
+        y: 100,
+        opacity: 0,
+    }
+})
+
+export const Subtitle = styled(PosedSubtitle)`
     margin: 0;
     font-size: 3rem;
     color: white;

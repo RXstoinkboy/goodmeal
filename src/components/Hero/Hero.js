@@ -1,8 +1,11 @@
 import React from 'react';
 import {Title, Subtitle, Header} from './HeroStyle';
+import {InfoSection} from './Info/Info';
+import SpecialitiesSection from './Specialites/Specialities';
 
 const Hero = props => {
     return (
+        <React.Fragment>
             <Header>
                 <Title>
                     good meal
@@ -11,6 +14,9 @@ const Hero = props => {
                     feel like at home
                 </Subtitle>
             </Header>
+            <InfoSection />
+            <SpecialitiesSection />
+        </React.Fragment>
     );
 };
 
