@@ -50,6 +50,7 @@ export const Subtitle = styled.h2`
     text-shadow: 1px 1px 10px black;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
+    letter-spacing: .7rem;
     z-index:2;
 
     @media all and (max-width: 850px){

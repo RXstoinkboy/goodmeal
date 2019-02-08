@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Title, Subtitle} from '../Hero/HeroStyle';
+import {Title} from '../Hero/HeroStyle';
 
 export const Wrapper = styled.div`
     width: 100%;
@@ -24,9 +24,10 @@ export const Logo = styled(Title)`
 
 export const Nav = styled.nav`
     margin-right: 1rem;
+    display: flex;
 `
 
-export const NavItem = styled.a`
+export const NavItem = styled.div`
     color: white;
     margin-right: 1rem;
     font-size: 1rem;
