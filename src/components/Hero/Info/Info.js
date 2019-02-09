@@ -1,8 +1,18 @@
 import React from 'react';
-import {Wrapper} from './InfoStyled';
+import {Wrapper, WrapperBlock, Block, SmallBlockImg, BigBlockImg} from './InfoStyled';
+
 
 export const InfoSection = () => {
     return (
-        <Wrapper />
+        <Wrapper>
+            <WrapperBlock>
+                <Block></Block>
+                <BigBlockImg></BigBlockImg>
+                <SmallBlockImg></SmallBlockImg>
+                <Block></Block>
+            </WrapperBlock>
+        </Wrapper>
     );
 };
+
+// style={{backgroundImage:`url(${interiorImg})`}}

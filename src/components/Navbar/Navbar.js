@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <Wrapper>
             <Link to='/'>
-                <Logo>good meal</Logo>
+                <Logo>Good Meal</Logo>
             </Link>
             <Nav>
                 {navItems.map(item =>

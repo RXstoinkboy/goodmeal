@@ -29,22 +29,10 @@ export const Header = styled.div`
     }
 `
 
-export const PosedTitle = posed.h1({
-    enter: {
-        y: 0,
-        opacity: 1
-    },
-    exit: {
-        y: 100,
-        opacity:0
-    }
-})
-
-export const Title = styled(PosedTitle)`
+export const Title = styled.h1`
     margin: 0;
     font-size: 7rem;
     color: white;
-    text-transform: capitalize;
     text-shadow: 1px 1px 10px black;
     font-family: 'Kaushan Script', cursive;
     z-index:2;
@@ -54,17 +42,7 @@ export const Title = styled(PosedTitle)`
     }
 `
 
-export const PosedSubtitle = posed.h2({
-    enter: {
-        y: 0,
-        opacity: 1},
-    exit: {
-        y: 100,
-        opacity: 0,
-    }
-})
-
-export const Subtitle = styled(PosedSubtitle)`
+export const Subtitle = styled.h2`
     margin: 0;
     font-size: 3rem;
     color: white;

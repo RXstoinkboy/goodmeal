@@ -8073,6 +8073,13 @@ react-is@^16.6.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
   integrity sha512-ioMCzVDWvCvKD8eeT+iukyWrBGrA3DiFYkXfBsVYIRdaREZuBjENG+KjrikavCLasozqRWTwFUagU/O4vPpRMA==
 
+react-pose-text@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-pose-text/-/react-pose-text-3.1.0.tgz#625471d503a56773715dc6ad79a5f7ef86f2a0ec"
+  integrity sha512-UekE51x+33Nry4+Wout6zAUpTyEKFizdSSkvm1+FGV29Z95hheyzsYrk5DjXLxjk7BKm8AqUrl1/NikzGHGR7g==
+  dependencies:
+    hey-listen "^1.0.5"
+
 react-pose@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/react-pose/-/react-pose-4.0.6.tgz#265a9814eea48898dd653a92e998fc86a1366fb4"

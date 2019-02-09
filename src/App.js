@@ -15,7 +15,7 @@ const App = () => (
     render={({location})=> (
       <React.Fragment>
       <Navbar />
-        <PoseGroup>
+      <PoseGroup>
           <RoutesContainer key={location.key}>
             <Switch location={location}>
               <Route exact path='/' component={Hero} key='home'/>
@@ -25,7 +25,7 @@ const App = () => (
               <Route path='/contact' component={Contact} key='contact' />
             </Switch>
           </RoutesContainer>
-        </PoseGroup>
+          </PoseGroup>
       </React.Fragment>
     )}
   />
