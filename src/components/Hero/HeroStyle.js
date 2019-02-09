@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import posed from 'react-pose';
 import heroImg from '../../img/hero.jpg';
 
+
+
 export const Header = styled.div`
     position: relative;
     top: 0;
@@ -15,8 +17,9 @@ export const Header = styled.div`
     flex-direction: column;
     background-image: url(${heroImg});
     background-origin: center;
-    background-position: center;
+    background-position: 50% 50%;
     background-size: cover;
+    background-attachment: fixed;
 
     &:after{
         content: '';

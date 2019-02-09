@@ -2,7 +2,7 @@ import React from 'react';
 import {Wrapper, WrapperBlock, Block, SmallBlockImg, BigBlockImg} from './InfoStyled';
 
 
-export const InfoSection = () => {
+export const InfoSection = props => {
     return (
         <Wrapper>
             <WrapperBlock>
