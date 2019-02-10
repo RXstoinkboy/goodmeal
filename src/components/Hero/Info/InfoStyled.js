@@ -5,7 +5,7 @@ import coolFood from '../../../img/coolFood.jpg';
 export const Wrapper = styled.div`
     display: flex;
     width: 100vw;
-    height: 50vh;
+    height: 40vh;
     background: radial-gradient(white 0%,  100%);
     justify-content: center;
     align-items: center;
@@ -36,7 +36,7 @@ export const WrapperBlock = styled.div`
 `
 
 export const Block = styled.div`
-    background: radial-gradient(white 0%, var(--mainGrad) 100%);
+    background: var(--mainGrad);
     min-height: 20vh;
     display: flex;
     justify-content: center;

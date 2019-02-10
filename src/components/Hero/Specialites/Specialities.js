@@ -1,15 +1,27 @@
-import React from 'react';
-import {Specialities, Top, Bottom} from './SpecialitiesStyle';
+import {SpecialitiesWrapper, Photo, Middle} from './SpecialitiesStyle';
+import {Subtitle} from '../HeroStyle';
+import React, { Component } from 'react';
 
-const SpecialitiesSection = () => {
+export class Specialities extends Component {
+    render() {
+        return (
+            <SpecialitiesSection />
+        );
+    }
+}
+
+const SpecialitiesSection =props=> {
     return (
-        <Specialities>
-            <Top>
-                Hello
-            </Top>
-            <Bottom />
-        </Specialities>
+        <SpecialitiesWrapper>
+            <Photo top>
+                <Subtitle>our specialities</Subtitle>
+            </Photo>
+            <Middle>
+                Hello from middle
+            </Middle>
+            <Photo>
+                Hello from bottom
+            </Photo>
+        </SpecialitiesWrapper>
     );
 };
-
-export default SpecialitiesSection;

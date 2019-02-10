@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Button from './Button';
 import {Wrapper, WrapperBlock, Block, SmallBlockImg, BigBlockImg} from './InfoStyled';
 import Modal from '../Modal/Modal'
-import 'flatpickr/dist/themes/dark.css';
-import Flatpickr from 'react-flatpickr';
 
 class InfoSection extends Component {
     constructor(props){
@@ -14,17 +12,14 @@ class InfoSection extends Component {
             currentDate: '',
         }
     }
-    handleClick =(e)=>{
+    handleClick =()=>{
         this.setState({
             open: !this.state.open
         })
-        e.stopImmediatePropagation();
-        console.log('click')
     }
 
     handleChange =(date)=>{
         this.setState({date});
-        console.log(this.state.date)
     }
 
     componentDidMount(){
@@ -34,20 +29,27 @@ class InfoSection extends Component {
         this.setState({
             currentDate: `${year}-${month}-${day}`
         })
-        console.log(this.state.currentDate)
     }
 
     render() {
-        let modal = this.state.open ? <Modal handleChange={this.handleChange} currentDate={this.state.currentDate} handleClick={this.handleClick} /> : null;
-
-        const { currentDate } = this.state;
         return (
-            <Wrapper>
+            <Info currentDate={this.state.currentDate} open={this.state.open} handleChange={this.handleChange} handleClick={this.handleClick}/>
+        );
+    }
+}
+
+export default InfoSection;
+
+const Info =props=>{
+    const { currentDate } = props;
+    let modal = props.open ? <Modal handleChange={props.handleChange} currentDate={currentDate} handleClick={props.handleClick} /> : null;
+    return(
+    <Wrapper>
             <WrapperBlock>
                 <Block>
                     <h1 style={{fontFamily: '"Kaushan Script", cursive'}}>Reservation</h1>
                     <p style={{fontFamily: "'Lato', sans-serif"}}>Please call us to book a table or use our contact form in order to reach us. We'll be happy to meet you!</p>
-                    <Button handleClick={this.handleClick} text='Book a table'/>
+                    <Button handleClick={props.handleClick} text='Book a table'/>
                 </Block>
                 <BigBlockImg></BigBlockImg>
                 <SmallBlockImg></SmallBlockImg>
@@ -60,8 +62,5 @@ class InfoSection extends Component {
             </WrapperBlock>
             {modal}
         </Wrapper>
-        );
-    }
+    )
 }
-
-export default InfoSection;
