@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     display: flex;
     width: 100vw;
     height: 50vh;
-    background: radial-gradient(white 0%, hsla(50deg, 30%, 80%, 1) 100%);
+    background: radial-gradient(white 0%,  100%);
     justify-content: center;
     align-items: center;
 
@@ -36,7 +36,7 @@ export const WrapperBlock = styled.div`
 `
 
 export const Block = styled.div`
-    background: radial-gradient(white 0%, hsla(50deg, 30%, 80%, 1) 100%);
+    background: radial-gradient(white 0%, var(--mainGrad) 100%);
     min-height: 20vh;
     display: flex;
     justify-content: center;

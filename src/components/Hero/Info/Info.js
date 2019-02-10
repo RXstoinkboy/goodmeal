@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from './Button';
 import {Wrapper, WrapperBlock, Block, SmallBlockImg, BigBlockImg} from './InfoStyled';
+import Modal from '../Modal/Modal'
 import 'flatpickr/dist/themes/dark.css';
 import Flatpickr from 'react-flatpickr';
 
@@ -8,22 +9,22 @@ class InfoSection extends Component {
     constructor(props){
         super(props);
         this.state = {
-            open: true,
+            open: false,
             date: new Date(),
             currentDate: '',
         }
     }
-    handleClick =()=>{
+    handleClick =(e)=>{
         this.setState({
             open: !this.state.open
         })
+        e.stopImmediatePropagation();
         console.log('click')
     }
 
-    handleChange =(e)=>{
-        this.setState({
-            date: e.target.value,
-        })
+    handleChange =(date)=>{
+        this.setState({date});
+        console.log(this.state.date)
     }
 
     componentDidMount(){
@@ -37,30 +38,16 @@ class InfoSection extends Component {
     }
 
     render() {
+        let modal = this.state.open ? <Modal handleChange={this.handleChange} currentDate={this.state.currentDate} handleClick={this.handleClick} /> : null;
+
         const { currentDate } = this.state;
         return (
-            <Info 
-                currentDate={currentDate} 
-                handleChange={this.handleChange}
-                handleClick={this.handleClick} />
-        );
-    }
-}
-
-export default InfoSection;
-
-const Info = props => {
-    return (
-        <Wrapper>
+            <Wrapper>
             <WrapperBlock>
                 <Block>
                     <h1 style={{fontFamily: '"Kaushan Script", cursive'}}>Reservation</h1>
                     <p style={{fontFamily: "'Lato', sans-serif"}}>Please call us to book a table or use our contact form in order to reach us. We'll be happy to meet you!</p>
-                    <Button handleClick={props.handleClick}/>
-                    <Flatpickr 
-                    value={props.currentDate}
-                    onChange={(e)=>props.handleChange}
-                    options={{minDate: props.currentDate}} /> 
+                    <Button handleClick={this.handleClick} text='Book a table'/>
                 </Block>
                 <BigBlockImg></BigBlockImg>
                 <SmallBlockImg></SmallBlockImg>
@@ -71,6 +58,10 @@ const Info = props => {
                     </p>
                 </Block>
             </WrapperBlock>
+            {modal}
         </Wrapper>
-    );
-};
+        );
+    }
+}
+
+export default InfoSection;

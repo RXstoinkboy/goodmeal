@@ -17,5 +17,6 @@ a{
 }
 
 :root{
-  --mainColor: hsla(50deg, 30%, 50%, 1); 
+  --mainColor: hsla(50deg, 30%, 50%, 1);
+  --mainGrad: hsla(50deg, 30%, 80%, 1);
 }

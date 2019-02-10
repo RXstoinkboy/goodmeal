@@ -5,7 +5,7 @@ class Button extends Component {
     render() {
         return (
             <ButtonReservation onClick={this.props.handleClick}>
-                Book a table
+                {this.props.text}
             </ButtonReservation>
         );
     }
