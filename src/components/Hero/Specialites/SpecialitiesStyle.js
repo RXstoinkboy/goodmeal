@@ -7,7 +7,7 @@ export const Photo = styled.div`
     width: 100vw;
     height: 50vh;
     background-origin: center;
-    background-position: center;
+    background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -38,6 +38,7 @@ export const Middle = styled.div`
 `
 
 export const SpecialitiesWrapper = styled.div`
+    display: block; 
     height: 100vh;
     width: 100vw;  
     background: teal                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     

@@ -2,6 +2,7 @@ import SplitText from 'react-pose-text';
 import {Title, Subtitle, Header} from './HeroStyle';
 import InfoSection from './Info/Info';
 import {Specialities} from './Specialites/Specialities';
+import Menu from './Menu/Menu';
 
 import React, { Component } from 'react';
 
@@ -63,6 +64,7 @@ const Content = props => {
             </Header>
             <InfoSection />
             <Specialities />
+            <Menu />
         </React.Fragment>
     );
 };
