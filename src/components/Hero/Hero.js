@@ -1,6 +1,6 @@
 import SplitText from 'react-pose-text';
 import {Title, Subtitle, Header} from './HeroStyle';
-import {InfoSection} from './Info/Info';
+import InfoSection from './Info/Info';
 import SpecialitiesSection from './Specialites/Specialities';
 
 import React, { Component } from 'react';
@@ -28,13 +28,16 @@ class Hero extends Component {
     handleScroll =()=>{
         const height = window.scrollY;
         this.setState({
-            transform: (0.5 * height)
+            transform: (0.05 * height)
         })
-        console.log(this.state.transform)
     }
 
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll)
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('scroll', this.handleScroll)
     }
     
 

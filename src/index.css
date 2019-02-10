@@ -15,3 +15,7 @@ code {
 a{
   text-decoration: none;
 }
+
+:root{
+  --mainColor: hsla(50deg, 30%, 50%, 1); 
+}
