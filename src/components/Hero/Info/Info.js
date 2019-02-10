@@ -20,6 +20,12 @@ class InfoSection extends Component {
         console.log('click')
     }
 
+    handleChange =(e)=>{
+        this.setState({
+            date: e.target.value,
+        })
+    }
+
     componentDidMount(){
         const day=`${new Date().getDate()}`;
         const month=( (new Date().getMonth())+1 < 10 ? `0${(new Date().getMonth())+1}` : `${(new Date().getMonth())+1}` );
@@ -33,16 +39,28 @@ class InfoSection extends Component {
     render() {
         const { currentDate } = this.state;
         return (
-            <Wrapper>
+            <Info 
+                currentDate={currentDate} 
+                handleChange={this.handleChange}
+                handleClick={this.handleClick} />
+        );
+    }
+}
+
+export default InfoSection;
+
+const Info = props => {
+    return (
+        <Wrapper>
             <WrapperBlock>
                 <Block>
                     <h1 style={{fontFamily: '"Kaushan Script", cursive'}}>Reservation</h1>
                     <p style={{fontFamily: "'Lato', sans-serif"}}>Please call us to book a table or use our contact form in order to reach us. We'll be happy to meet you!</p>
-                    <Button handleClick={this.handleClick}/>
+                    <Button handleClick={props.handleClick}/>
                     <Flatpickr 
-                    value={currentDate}
-                    onChange={date => { this.setState({date}) }}
-                    options={{minDate: currentDate}} /> 
+                    value={props.currentDate}
+                    onChange={(e)=>props.handleChange}
+                    options={{minDate: props.currentDate}} /> 
                 </Block>
                 <BigBlockImg></BigBlockImg>
                 <SmallBlockImg></SmallBlockImg>
@@ -54,8 +72,5 @@ class InfoSection extends Component {
                 </Block>
             </WrapperBlock>
         </Wrapper>
-        );
-    }
-}
-
-export default InfoSection;
+    );
+};
