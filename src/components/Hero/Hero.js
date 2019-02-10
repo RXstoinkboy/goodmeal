@@ -16,9 +16,12 @@ class Hero extends Component {
     
     handleScroll =()=>{
         const height = window.scrollY;
-        this.setState({
-            transform: (0.05 * height)
+        window.requestAnimationFrame(()=>{
+            this.setState({
+                transform: (0.05 * height)
+            })
         })
+        
     }
 
     componentDidMount(){

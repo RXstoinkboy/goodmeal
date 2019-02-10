@@ -15,10 +15,11 @@ export class Specialities extends Component {
     }
     handleScroll =()=>{
         const height = (window.innerHeight* 1.4) + window.scrollY;
-        this.setState({
-            transform: (0.05 * height)            
+        window.requestAnimationFrame(()=>{
+            this.setState({
+                transform: (0.05 * height)
+            })
         })
-        console.log(this.state.transform)
     }
 
     componentDidMount(){
