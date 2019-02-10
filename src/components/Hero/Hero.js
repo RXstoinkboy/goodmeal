@@ -5,18 +5,6 @@ import SpecialitiesSection from './Specialites/Specialities';
 
 import React, { Component } from 'react';
 
-const charPoses = {
-    enter: {
-        opacity: 1,
-        y: 0,
-        delay: ({charIndex}) => charIndex*30
-    },
-    exit: {
-        opacity: 0,
-        y: 20
-    }
-}
-
 class Hero extends Component {
     constructor(props){
         super(props);
@@ -42,21 +30,39 @@ class Hero extends Component {
     
 
     render() {
+        const charPoses = {
+            enter: {
+                opacity: 1,
+                y: 0,
+                delay: ({charIndex}) => charIndex*30
+            },
+            exit: {
+                opacity: 0,
+                y: 20
+            }
+        }
+
         return (
-            <React.Fragment>
-            <Header style={{backgroundPosition: `50% ${this.state.transform}%`}}>
-                <Title initialPose="exit" pose="enter">
-                    <SplitText charPoses={charPoses}>Good Meal</SplitText>
-                </Title>
-                <Subtitle initialPose="exit" pose="enter">
-                <SplitText charPoses={charPoses}>FEEL LIKE AT HOME</SplitText>
-                </Subtitle>
-            </Header>
-            <InfoSection change={this.state.transform} />
-            <SpecialitiesSection />
-        </React.Fragment>
+            <Content charPoses={charPoses} transform={this.state.transform}/>
         );
     }
 }
 
 export default Hero;
+
+const Content = props => {
+    return (
+        <React.Fragment>
+            <Header style={{backgroundPosition: `50% ${props.transform}%`}}>
+                <Title initialPose="exit" pose="enter">
+                    <SplitText charPoses={props.charPoses}>Good Meal</SplitText>
+                </Title>
+                <Subtitle initialPose="exit" pose="enter">
+                <SplitText charPoses={props.charPoses}>FEEL LIKE AT HOME</SplitText>
+                </Subtitle>
+            </Header>
+            <InfoSection />
+            <SpecialitiesSection />
+        </React.Fragment>
+    );
+};

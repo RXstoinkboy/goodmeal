@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import posed from 'react-pose';
 import heroImg from '../../img/hero.jpg';
 
 
