@@ -9,32 +9,9 @@ import specialitiesTop from '../../../img/specialitiesTop.jpg';
 import kitchen from '../../../img/kitchen.jpg';
 
 export class Specialities extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            transform: 0
-        }
-    }
-    handleScroll =()=>{
-        const height = (window.innerHeight* 1.4) + window.scrollY;
-        window.requestAnimationFrame(()=>{
-            this.setState({
-                transform: (0.5 * height).toFixed(0)
-            })
-        })
-    }
-
-    componentDidMount(){
-        window.addEventListener('scroll', this.handleScroll)
-    }
-
-    componentWillUnmount(){
-        window.removeEventListener('scroll', this.handleScroll)
-    }
-
     render() {
         return (
-            <SpecialitiesSection transform={this.state.transform} translate={this.props.transform}></SpecialitiesSection>
+            <SpecialitiesSection translate={this.props.transform}></SpecialitiesSection>
         );
     }
 }

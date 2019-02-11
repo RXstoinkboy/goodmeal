@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import {MenuWrapper} from './MenuStyle';
 
 class Menu extends Component {
     render() {
         return (
-            <div>
+            <MenuWrapper>
                 hello from menu
-            </div>
+            </MenuWrapper>
         );
     }
 }

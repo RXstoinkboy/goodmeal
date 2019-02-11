@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     align-items: center;
     flex-direction: column;
     position: relative;
-    z-index: 2;
+    z-index: -1;
     overflow: hidden;
 
     @media all and (max-width: 850px){
@@ -36,8 +36,6 @@ export const Middle = styled.div`
 `
 
 export const SpecialitiesWrapper = styled.div`
-    display: block; 
-    height: 100vh;
     width: 100vw;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 `
 export const Container = styled.div`
