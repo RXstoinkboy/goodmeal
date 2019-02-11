@@ -3,12 +3,14 @@ import interiorImg from '../../../img/interior.jpg';
 import coolFood from '../../../img/coolFood.jpg';
 
 export const Wrapper = styled.div`
+    position: relative;
     display: flex;
     width: 100vw;
     height: 40vh;
     background: radial-gradient(white 0%,  100%);
     justify-content: center;
     align-items: center;
+    z-index: 10;
 
     @media all and (max-width: 800px){
         height: auto;

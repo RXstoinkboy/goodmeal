@@ -1,8 +1,9 @@
 import SplitText from 'react-pose-text';
-import {Title, Subtitle, Header} from './HeroStyle';
+import {Title, Subtitle, Header, ParallaxImage} from './HeroStyle';
 import InfoSection from './Info/Info';
 import {Specialities} from './Specialites/Specialities';
 import Menu from './Menu/Menu';
+import heroImg from '../../img/hero.jpg';
 
 import React, { Component } from 'react';
 
@@ -18,10 +19,10 @@ class Hero extends Component {
         const height = window.scrollY;
         window.requestAnimationFrame(()=>{
             this.setState({
-                transform: (0.05 * height)
+                transform: (0.5 * height).toFixed(0)
             })
         })
-        
+        console.log(this.state.transform)
     }
 
     componentDidMount(){
@@ -57,7 +58,8 @@ export default Hero;
 const Content = props => {
     return (
         <React.Fragment>
-            <Header style={{backgroundPosition: `50% ${props.transform}%`}}>
+            <Header>
+                <ParallaxImage src={heroImg} style={{transform: `translateY(${props.transform}px)`}} />
                 <Title initialPose="exit" pose="enter">
                     <SplitText charPoses={props.charPoses}>Good Meal</SplitText>
                 </Title>
@@ -66,7 +68,7 @@ const Content = props => {
                 </Subtitle>
             </Header>
             <InfoSection />
-            <Specialities />
+            <Specialities transform={props.transform}/>
             <Menu />
         </React.Fragment>
     );

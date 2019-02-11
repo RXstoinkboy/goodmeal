@@ -1,10 +1,12 @@
-import {SpecialitiesWrapper, Photo, Middle, WrapperBlock, Container} from './SpecialitiesStyle';
-import {Subtitle} from '../HeroStyle';
+import {SpecialitiesWrapper, Wrapper, Middle, WrapperBlock, Container} from './SpecialitiesStyle';
+import {Subtitle, ParallaxImage} from '../HeroStyle';
 import React, { Component } from 'react';
 import tagiatelle from '../../../img/tagiatelle.jpg';
 import sweets from '../../../img/sweets.jpg';
 import shells from '../../../img/shells.jpg';
 import salmon from '../../../img/salmon.jpg';
+import specialitiesTop from '../../../img/specialitiesTop.jpg';
+import kitchen from '../../../img/kitchen.jpg';
 
 export class Specialities extends Component {
     constructor(props){
@@ -17,7 +19,7 @@ export class Specialities extends Component {
         const height = (window.innerHeight* 1.4) + window.scrollY;
         window.requestAnimationFrame(()=>{
             this.setState({
-                transform: (0.05 * height)
+                transform: (0.5 * height).toFixed(0)
             })
         })
     }
@@ -32,7 +34,7 @@ export class Specialities extends Component {
 
     render() {
         return (
-            <SpecialitiesSection transform={this.state.transform}></SpecialitiesSection>
+            <SpecialitiesSection transform={this.state.transform} translate={this.props.transform}></SpecialitiesSection>
         );
     }
 }
@@ -40,9 +42,10 @@ export class Specialities extends Component {
 const SpecialitiesSection =props=> {
     return (
         <SpecialitiesWrapper>
-            <Photo top style={{backgroundPosition: `50% ${170-props.transform}%`}}>
+            <Wrapper>
+                <ParallaxImage src={specialitiesTop} style={{transform: `translateY(${(props.translate - (window.innerHeight*0.4))*0.6}px)`}}/>
                 <Subtitle>our specialities</Subtitle>
-            </Photo>
+            </Wrapper>
             <Middle>
                 <WrapperBlock>
                     <Container>
@@ -71,7 +74,9 @@ const SpecialitiesSection =props=> {
                     </Container>
                 </WrapperBlock>
             </Middle>
-            <Photo style={{backgroundPosition: `50% ${200-props.transform}%`}}/>
+            <Wrapper>
+                <ParallaxImage src={kitchen} style={{transform: `translateY(${(props.translate - (window.innerHeight*0.6))*0.6}px)`}}/>
+            </Wrapper>
         </SpecialitiesWrapper>
     );
 };

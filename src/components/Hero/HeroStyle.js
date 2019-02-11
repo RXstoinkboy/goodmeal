@@ -1,7 +1,17 @@
 import styled from 'styled-components';
-import heroImg from '../../img/hero.jpg';
 
 
+export const ParallaxImage = styled.img`
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+
+    @media all and (orientation: landscape){
+        max-width: 120%;
+    }
+    @media all and (orientation: portrait){
+        max-height: 140%;
+`
 
 export const Header = styled.div`
     position: relative;
@@ -14,11 +24,8 @@ export const Header = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(${heroImg});
-    background-origin: center;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-attachment: fixed;
+    background: transparent;
+    overflow: hidden;
 
     &:after{
         content: '';

@@ -1,20 +1,17 @@
 import styled from 'styled-components';
-import specialitiesTop from '../../../img/specialitiesTop.jpg';
-import kitchen from '../../../img/kitchen.jpg';
 
-export const Photo = styled.div`
-    background: url(${props => props.top ? specialitiesTop : kitchen});
+export const Wrapper = styled.div`
+    background: hsla(0,0%,0%, .5);
     width: 100vw;
     height: 50vh;
-    background-origin: center;
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
 
     @media all and (max-width: 800px){
         display: ${props => props.top ? 'flex' : 'none'};
@@ -31,6 +28,7 @@ export const Middle = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: visible;
 
     @media all and (max-width: 800px){
         height: auto
@@ -40,8 +38,7 @@ export const Middle = styled.div`
 export const SpecialitiesWrapper = styled.div`
     display: block; 
     height: 100vh;
-    width: 100vw;  
-    background: teal                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+    width: 100vw;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 `
 export const Container = styled.div`
     min-width: 250px;
@@ -61,7 +58,7 @@ export const Container = styled.div`
 `
 
 export const WrapperBlock = styled.div`
-    z-index:2;
+    z-index:3;
     min-width: 800px;
     max-width: 1000px;
     display: grid;
