@@ -13,8 +13,8 @@ export const Wrapper = styled.div`
     z-index: 2;
     overflow: hidden;
 
-    @media all and (max-width: 800px){
-        display: ${props => props.top ? 'flex' : 'none'};
+    @media all and (max-width: 850px){
+        display: ${props=> props.top ? 'flex' : 'none'};
         height: 200px;
     }
 `
@@ -30,7 +30,7 @@ export const Middle = styled.div`
     flex-direction: column;
     overflow: visible;
 
-    @media all and (max-width: 800px){
+    @media all and (max-width: 850px){
         height: auto
     }
 `
@@ -43,6 +43,7 @@ export const SpecialitiesWrapper = styled.div`
 export const Container = styled.div`
     min-width: 250px;
     min-height: 250px;
+    max-width: 100vw;
     ${props => props.photo ? `background-image: url(${props.photo})`: `background: var(--mainGrad)`};
     background-origin: center;
     background-position: center;
@@ -54,6 +55,7 @@ export const Container = styled.div`
     
     @media all and (max-width: 500px){
         display: ${props => props.photo ? 'none' : 'grid'}
+        border-bottom: 3px solid var(--mainColor)
     }
 `
 
@@ -65,9 +67,10 @@ export const WrapperBlock = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     box-shadow: 0 4px 50px black;
 
-    @media all and (max-width: 800px){
+    @media all and (max-width: 850px){
+        min-width: auto;
         grid-template-columns: 1fr 1fr;
-        width: 100%;
+        width: 100vw;
         z-index:1;
     }
 

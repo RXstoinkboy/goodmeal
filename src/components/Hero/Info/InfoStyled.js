@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
     align-items: center;
     z-index: 10;
 
-    @media all and (max-width: 800px){
+    @media all and (max-width: 850px){
         height: auto;
     }
 `
@@ -24,7 +24,7 @@ export const WrapperBlock = styled.div`
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 4px 50px black;
 
-    @media all and (max-width: 800px){
+    @media all and (max-width: 850px){
         grid-template-columns: 2fr 3fr;
         width: 100%;
         z-index:1;

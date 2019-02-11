@@ -3,12 +3,14 @@ import {Title} from '../Hero/HeroStyle';
 
 export const Wrapper = styled.div`
     width: 100%;
+    max-width: 100%;
     height: 6rem;
     position: absolute;
     z-index:100;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 `
 
 export const Logo = styled(Title)`

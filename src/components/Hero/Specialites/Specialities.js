@@ -42,8 +42,8 @@ export class Specialities extends Component {
 const SpecialitiesSection =props=> {
     return (
         <SpecialitiesWrapper>
-            <Wrapper>
-                <ParallaxImage src={specialitiesTop} style={{transform: `translateY(${(props.translate - (window.innerHeight*0.4))*0.6}px)`}}/>
+            <Wrapper top>
+                <ParallaxImage src={specialitiesTop} style={{transform: `translateY(${window.innerWidth >= 850 ? ((props.translate - (window.innerHeight*0.4))*0.6) : 0}px)`}}/>
                 <Subtitle>our specialities</Subtitle>
             </Wrapper>
             <Middle>
