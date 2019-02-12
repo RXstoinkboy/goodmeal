@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const SpecialitiesWrapper = styled.div`
-    width: 100vw;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    width: 100%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 `
 
 export const Wrapper = styled.div`
     background: hsla(0,0%,0%, .5);
-    width: 100vw;
+    width: 100%;
     height: 30rem;
     display: flex;
     text-align: center;
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
 
 export const Middle = styled.div`
     background: var(--mainGrad);
-    width: 100vw;
+    width: 100%;
     height: 30rem;
     display: flex;
     text-align: center;
@@ -41,6 +41,7 @@ export const Middle = styled.div`
 export const Container = styled.div`
     max-width: 17rem;
     height: 17rem;
+    padding: 0 2rem;
     ${props => props.photo ? `background-image: url(${props.photo})`: `background: var(--mainGrad)`};
     background-origin: center;
     background-position: center;

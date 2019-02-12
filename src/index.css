@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script|Lato:300,400,900');
 
-body {
+*{
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -20,5 +20,6 @@ a{
 :root{
   --mainColor: hsla(50deg, 30%, 50%, 1);
   --secondaryColor: hsla(50deg, 60%, 50%, 1);
+  --tertiaryColor: hsla(50deg, 10%, 70%, 1);
   --mainGrad: radial-gradient(white 0%, hsla(50deg, 30%, 80%, 1) 100%);
 }

@@ -48,14 +48,14 @@ const Info =props=>{
             <WrapperBlock>
                 <Block>
                     <h1 style={{fontFamily: '"Kaushan Script", cursive'}}>Reservation</h1>
-                    <p style={{fontFamily: "'Lato', sans-serif"}}>Please call us to book a table or use our contact form in order to reach us. We'll be happy to meet you!</p>
+                    <p style={{fontFamily: "'Lato', sans-serif", margin: '1rem 0'}}>Please call us to book a table or use our contact form in order to reach us. We'll be happy to meet you!</p>
                     <Button handleClick={props.handleClick} text='Book a table'/>
                 </Block>
                 <BigBlockImg></BigBlockImg>
                 <SmallBlockImg></SmallBlockImg>
                 <Block>
                     <h1 style={{fontFamily: '"Kaushan Script", cursive'}}>About</h1>
-                    <p style={{fontFamily: "'Lato', sans-serif"}}>
+                    <p style={{fontFamily: "'Lato', sans-serif", margin: '1rem 0'}}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam non dolorem corporis ratione nostrum natus? Voluptatibus sit animi laboriosam quidem maiores officiis fugiat, quo tempora voluptatum culpa veniam dolorem beatae velit eum, modi explicabo rerum natus ea consectetur itaque quod illo? Incidunt provident id obcaecati porro et ab accusantium inventore?
                     </p>
                 </Block>

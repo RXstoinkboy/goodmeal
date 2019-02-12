@@ -5,7 +5,7 @@ import coolFood from '../../../img/coolFood.jpg';
 export const Wrapper = styled.div`
     position: relative;
     display: flex;
-    width: 100vw;
+    width: 100%;
     height: 30rem;
     background: var(--mainGrad);
     justify-content: center;

@@ -18,7 +18,7 @@ export const Header = styled.div`
     top: 0;
     left: 0;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -30,7 +30,7 @@ export const Header = styled.div`
     &:after{
         content: '';
         position: absolute;
-        width:100%;
+        width: 100vw;
         height: 100%;
         background: linear-gradient(-45deg, hsla(10, 80%, 10%, .5) 0%, hsla(190, 70%, 10%, .5) 100%);
         top: 0;
