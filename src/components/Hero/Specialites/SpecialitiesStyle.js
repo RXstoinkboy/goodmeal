@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
+export const SpecialitiesWrapper = styled.div`
+    width: 100vw;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+`
+
 export const Wrapper = styled.div`
     background: hsla(0,0%,0%, .5);
     width: 100vw;
-    height: 50vh;
+    height: 30rem;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -15,33 +19,28 @@ export const Wrapper = styled.div`
 
     @media all and (max-width: 850px){
         display: ${props=> props.top ? 'flex' : 'none'};
-        height: 200px;
+        width: 100vw;]
     }
 `
 
 export const Middle = styled.div`
-    background: white;
+    background: var(--mainGrad);
     width: 100vw;
-    height: 40vh;
+    height: 30rem;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     overflow: visible;
 
     @media all and (max-width: 850px){
-        height: auto
+        height: auto;
     }
 `
 
-export const SpecialitiesWrapper = styled.div`
-    width: 100vw;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-`
 export const Container = styled.div`
-    min-width: 250px;
-    min-height: 250px;
-    max-width: 100vw;
+    max-width: 17rem;
+    height: 17rem;
     ${props => props.photo ? `background-image: url(${props.photo})`: `background: var(--mainGrad)`};
     background-origin: center;
     background-position: center;
@@ -50,23 +49,27 @@ export const Container = styled.div`
     display: grid;
     justify-content: center;
     align-content: center;
+
+    @media all and (max-width: 850px){
+        border-bottom: 1px solid var(--mainColor);
+        max-width: 100%;
+        height: 17rem;
+    }
     
     @media all and (max-width: 500px){
         display: ${props => props.photo ? 'none' : 'grid'}
-        border-bottom: 3px solid var(--mainColor)
+        border-bottom: 3px solid var(--mainColor);
+        width: 100%;
     }
 `
 
 export const WrapperBlock = styled.div`
     z-index:3;
-    min-width: 800px;
-    max-width: 1000px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     box-shadow: 0 4px 50px black;
 
     @media all and (max-width: 850px){
-        min-width: auto;
         grid-template-columns: 1fr 1fr;
         width: 100vw;
         z-index:1;

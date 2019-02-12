@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
     position: relative;
     display: flex;
     width: 100vw;
-    height: 40vh;
-    background: radial-gradient(white 0%,  100%);
+    height: 30rem;
+    background: var(--mainGrad);
     justify-content: center;
     align-items: center;
     z-index: 10;
@@ -39,12 +39,12 @@ export const WrapperBlock = styled.div`
 
 export const Block = styled.div`
     background: var(--mainGrad);
-    min-height: 20vh;
+    height: 17rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
-    padding: 2rem;
+    padding: 0 2rem;
     text-align: center;
 `
 
