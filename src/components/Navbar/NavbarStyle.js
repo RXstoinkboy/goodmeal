@@ -24,6 +24,45 @@ export const Logo = styled(Title)`
     }
 `
 
+export const MobileMenu = styled.div`
+    display: none;
+    width: 3rem;
+    height: 2rem;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+
+    &::before{
+        content: '';
+        position: fixed;
+        width: 3rem;
+        height: 6px;
+        position: fixed;
+        border-radius: 3px;
+        top: 20px;
+        right: 20px;
+        background: black;
+        box-shadow: 0 15px 0 black;
+    }
+
+    &::after{
+        content: '';
+        position: fixed;
+        width: 3rem;
+        height: 6px;
+        position: fixed;
+        top: 50px;
+        right: 20px;
+        border-radius: 3px;
+        background: black;
+    }
+
+    @media all and (max-width: 850px){
+        display: block;
+    }
+`
+
 export const Nav = styled.nav`
     margin-right: 1rem;
     display: flex;

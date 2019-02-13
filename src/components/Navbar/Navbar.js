@@ -1,10 +1,10 @@
-import React from 'react';
-import {Wrapper, Logo, Nav, NavItem} from './NavbarStyle';
+import React, { Component } from 'react';
+import {Wrapper, Logo, Nav, NavItem, MobileMenu} from './NavbarStyle';
 import {Link} from 'react-router-dom';
 import Fade from 'react-reveal';
 import posed from 'react-pose';
 
-const Navbar = () => {
+const NavbarContent =props=> {
     const navItems = ['home', 'recipes', 'news', 'about', 'contact'];
     return (
         <Wrapper>
@@ -15,7 +15,10 @@ const Navbar = () => {
                     </Fade>
                 </Logo>
             </Link>
-            <Nav>
+            <MobileMenu 
+                onClick={props.handleClick}
+                open={props.open} />
+            <Nav open={props.open}>
                 {navItems.map(item => {
                     if (item === 'home') {
                         return (
@@ -35,11 +38,35 @@ const Navbar = () => {
                         )
                     }
                 }
-                
                 )}
             </Nav>
         </Wrapper>
     );
 };
 
-export default Navbar;
+
+
+
+
+class Navbar extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            open: false
+        }
+    }
+    handleClick =()=>{
+        this.setState({
+            open: !this.state.open
+        })
+        console.log('click', this.state.open)
+    }
+
+    render() {
+        return (
+            <NavbarContent handleClick={this.handleClick} open={this.state.open}/>
+        );
+    }
+}
+
+export default Navbar; 
