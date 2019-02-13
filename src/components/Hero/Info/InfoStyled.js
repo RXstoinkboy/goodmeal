@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     display: flex;
     width: 100%;
     height: 30rem;
-    background: var(--mainGrad);
+    background: white;
     justify-content: center;
     align-items: center;
     z-index: 10;
@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 
 export const WrapperBlock = styled.div`
     z-index:2;
-    max-width: 1000px;
+    max-width: 1080px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 4px 50px black;

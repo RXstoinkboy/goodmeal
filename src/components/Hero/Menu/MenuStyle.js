@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 export const MenuWrapper = styled.div`
@@ -11,9 +12,20 @@ export const MenuWrapper = styled.div`
 `
 export const MenuGrid = styled.div`
     display: grid;
-    grid-gap: 3rem;
+    grid-gap: 4rem;
     grid-template-columns: 1fr 1fr;
     max-width: 70vw;
+    margin-bottom: 5rem;
+
+    @media all and (max-width: 1100px){
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+    }
+
+    @media all and (max-width: 850px){
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
 `
 
 export const Title = styled.h1`

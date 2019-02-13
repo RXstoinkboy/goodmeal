@@ -17,7 +17,7 @@ export const Header = styled.div`
     position: relative;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     display: flex;
     text-align: center;

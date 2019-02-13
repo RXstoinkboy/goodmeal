@@ -7,6 +7,7 @@ import shells from '../../../img/shells.jpg';
 import salmon from '../../../img/salmon.jpg';
 import specialitiesTop from '../../../img/specialitiesTop.jpg';
 import kitchen from '../../../img/kitchen.jpg';
+import Fade from 'react-reveal';
 
 export class Specialities extends Component {
     render() {
@@ -25,30 +26,46 @@ const SpecialitiesSection =props=> {
             </Wrapper>
             <Middle>
                 <WrapperBlock>
-                    <Container>
-                        <h1 style={{fontFamily: "'Lato', sans-serif", fontSize: '1.6rem'}}>Tagiatelle</h1>
-                        <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: "var(--mainColor)", margin: '1rem 0'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dolor!</p>
-                        <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1.1rem', color: 'var(--secondaryColor)'}}><strong>FROM 15.50 $</strong></p>
-                    </Container>
-                    <Container photo={tagiatelle}/>
-                    <Container>
-                        <h1 style={{fontFamily: "'Lato', sans-serif", fontSize: '1.6rem'}}>Cake</h1>
-                        <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: "var(--mainColor)", margin: '1rem 0'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dolor!</p>
-                        <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1.1rem', color: 'var(--secondaryColor)'}}><strong>FROM 7.00 $</strong></p>
-                    </Container>
-                    <Container photo={sweets}/>
-                    <Container photo={shells}/>
-                    <Container>
-                        <h1 style={{fontFamily: "'Lato', sans-serif", fontSize: '1.6rem'}}>Clams</h1>
-                        <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: "var(--mainColor)", margin: '1rem 0'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dolor!</p>
-                        <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1.1rem', color: 'var(--secondaryColor)'}}><strong>FROM 45.20 $</strong></p>
-                    </Container>
-                    <Container photo={salmon}/>
-                    <Container>
-                        <h1 style={{fontFamily: "'Lato', sans-serif", fontSize: '1.6rem'}}>Salmon</h1>
-                        <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: "var(--mainColor)", margin: '1rem 0'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dolor!</p>
-                        <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1.1rem', color: 'var(--secondaryColor)'}}><strong>FROM 35.50 $</strong></p>
-                    </Container>
+                    <Fade left>
+                        <Container>
+                            <h1 style={{fontFamily: "'Lato', sans-serif", fontSize: '1.6rem'}}>Tagiatelle</h1>
+                            <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: "var(--mainColor)", margin: '1rem 0'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dolor!</p>
+                            <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1.1rem', color: 'var(--secondaryColor)'}}><strong>FROM 15.50 $</strong></p>
+                        </Container>
+                    </Fade>
+                    <Fade top>
+                        <Container photo={tagiatelle}/>
+                    </Fade> 
+                    <Fade bottom>
+                        <Container>
+                            <h1 style={{fontFamily: "'Lato', sans-serif", fontSize: '1.6rem'}}>Cake</h1>
+                            <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: "var(--mainColor)", margin: '1rem 0'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dolor!</p>
+                            <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1.1rem', color: 'var(--secondaryColor)'}}><strong>FROM 7.00 $</strong></p>
+                        </Container>
+                    </Fade>
+                    <Fade right>
+                        <Container photo={sweets}/>
+                    </Fade>
+                    <Fade bottom>
+                        <Container photo={shells}/>
+                    </Fade>
+                    <Fade top>
+                        <Container>
+                            <h1 style={{fontFamily: "'Lato', sans-serif", fontSize: '1.6rem'}}>Clams</h1>
+                            <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: "var(--mainColor)", margin: '1rem 0'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dolor!</p>
+                            <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1.1rem', color: 'var(--secondaryColor)'}}><strong>FROM 45.20 $</strong></p>
+                        </Container>
+                    </Fade>
+                    <Fade right>
+                        <Container photo={salmon}/>
+                    </Fade>
+                    <Fade bottom>
+                        <Container>
+                            <h1 style={{fontFamily: "'Lato', sans-serif", fontSize: '1.6rem'}}>Salmon</h1>
+                            <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: "var(--mainColor)", margin: '1rem 0'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, dolor!</p>
+                            <p style={{fontFamily: "'Lato', sans-serif", fontSize: '1.1rem', color: 'var(--secondaryColor)'}}><strong>FROM 35.50 $</strong></p>
+                        </Container>
+                    </Fade>
                 </WrapperBlock>
             </Middle>
             <Wrapper>

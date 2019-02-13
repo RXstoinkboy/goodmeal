@@ -24,7 +24,7 @@ export const Wrapper = styled.div`
 `
 
 export const Middle = styled.div`
-    background: var(--mainGrad);
+    background: white;
     width: 100%;
     height: 30rem;
     display: flex;

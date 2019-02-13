@@ -22,7 +22,6 @@ class Hero extends Component {
                 transform: (0.5 * height).toFixed(0)
             })
         })
-        console.log(this.state.transform)
     }
 
     componentDidMount(){
@@ -48,7 +47,7 @@ class Hero extends Component {
         }
 
         return (
-            <Content charPoses={charPoses} transform={this.state.transform}/>
+            <Content charPoses={charPoses} transform={this.state.transform} />
         );
     }
 }
