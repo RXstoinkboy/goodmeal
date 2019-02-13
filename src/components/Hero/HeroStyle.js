@@ -27,6 +27,10 @@ export const Header = styled.div`
     background: transparent;
     overflow: hidden;
 
+    @media all and (max-width: 850px){
+        height: 100vh;
+    }
+
     &:after{
         content: '';
         position: absolute;

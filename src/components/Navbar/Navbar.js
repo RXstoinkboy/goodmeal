@@ -2,6 +2,7 @@ import React from 'react';
 import {Wrapper, Logo, Nav, NavItem} from './NavbarStyle';
 import {Link} from 'react-router-dom';
 import Fade from 'react-reveal';
+import posed from 'react-pose';
 
 const Navbar = () => {
     const navItems = ['home', 'recipes', 'news', 'about', 'contact'];
