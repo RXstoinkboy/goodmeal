@@ -4,6 +4,44 @@ import {Link} from 'react-router-dom';
 import Fade from 'react-reveal';
 import posed from 'react-pose';
 
+class Navbar extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            open: true
+        }
+    }
+    handleClick =()=>{
+        this.setState({
+            open: !this.state.open
+        })
+        console.log('click', this.state.open)
+    }
+
+    handleResize =()=>{
+        this.setState({
+            open: window.innerWidth > 850 ? true : false
+        })
+    }
+
+    componentDidMount(){
+        window.addEventListener('resize', this.handleResize)
+    }
+
+    componentWillUnmount(){
+        window.removeEventListener('resize', this.handleResize)
+    }
+
+    render() {
+        return (
+            <NavbarContent handleClick={this.handleClick} open={this.state.open}/>
+        );
+    }
+}
+
+export default Navbar; 
+
+
 const NavbarContent =props=> {
     const navItems = ['home', 'recipes', 'news', 'about', 'contact'];
     return (
@@ -18,7 +56,9 @@ const NavbarContent =props=> {
             <MobileMenu 
                 onClick={props.handleClick}
                 open={props.open} />
-            <Nav open={props.open}>
+            <Nav 
+                open={props.open}
+                style={{transform: `translateX(${props.open ? 0 : '100%'})`}}>
                 {navItems.map(item => {
                     if (item === 'home') {
                         return (
@@ -47,26 +87,3 @@ const NavbarContent =props=> {
 
 
 
-
-class Navbar extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            open: false
-        }
-    }
-    handleClick =()=>{
-        this.setState({
-            open: !this.state.open
-        })
-        console.log('click', this.state.open)
-    }
-
-    render() {
-        return (
-            <NavbarContent handleClick={this.handleClick} open={this.state.open}/>
-        );
-    }
-}
-
-export default Navbar; 

@@ -31,7 +31,10 @@ export const MobileMenu = styled.div`
     position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 40;
+    transition: all .5s ease;
     cursor: pointer;
+    ${props => props.open ? 'transform: rotate(45deg)' : 'transform: rotate(0)'};
 
     &::before{
         content: '';
@@ -40,10 +43,8 @@ export const MobileMenu = styled.div`
         height: 6px;
         position: fixed;
         border-radius: 3px;
-        top: 20px;
-        right: 20px;
         background: black;
-        box-shadow: 0 15px 0 black;
+        box-shadow: ${props => props.open ? 'none' : '0 15px 0 black'};
     }
 
     &::after{
@@ -52,10 +53,11 @@ export const MobileMenu = styled.div`
         width: 3rem;
         height: 6px;
         position: fixed;
-        top: 50px;
-        right: 20px;
+        top: 30px;
         border-radius: 3px;
+        transition: all .3s ease;
         background: black;
+        ${props => props.open ? 'transform: rotate(450deg) translate(-6px, -21px)' : 'transform: rotate(0) translateX(0)'};
     }
 
     @media all and (max-width: 850px){
@@ -66,6 +68,7 @@ export const MobileMenu = styled.div`
 export const Nav = styled.nav`
     margin-right: 1rem;
     display: flex;
+    transform: translateX(0);
 
     @media all and (max-width: 850px){
         margin: 0;
