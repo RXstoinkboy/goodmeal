@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Button extends Component {
     render() {
         return (
-            <ButtonReservation onClick={this.props.handleClick}>
+            <ButtonReservation onClick={this.props.handleClick} marg={this.props.marg}>
                 {this.props.text}
             </ButtonReservation>
         );

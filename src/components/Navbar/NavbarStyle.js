@@ -23,6 +23,22 @@ export const Logo = styled(Title)`
         font-size: 1.5rem;   
     }
 `
+export const MobileMenuWrapper = styled.div`
+    display: none;
+    background: hsla(0, 0%, 100%, 0.4);
+    z-index: 39;
+    border-radius: 4px;
+    width: 4rem;
+    height: 3rem;
+    position: fixed;
+    top: 15px;
+    right: 12px;
+
+    @media all and (max-width: 850px){
+        display: block;
+    }
+
+`
 
 export const MobileMenu = styled.div`
     display: none;

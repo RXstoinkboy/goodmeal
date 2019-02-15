@@ -71,6 +71,7 @@ export const SmallBlockImg = styled(Block)`
 export const ButtonReservation = styled.button`
     font-family: 'Lato', sans-serif;
     padding: 0.5rem;
+    margin: ${props => props.marg ? '0 0.5rem' : '0'};
     min-height: 40px;
     color: var(--mainColor);
     background: none;

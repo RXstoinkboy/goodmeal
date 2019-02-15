@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Wrapper, Logo, Nav, NavItem, MobileMenu} from './NavbarStyle';
+import {Wrapper, Logo, Nav, NavItem, MobileMenu, MobileMenuWrapper} from './NavbarStyle';
 import {Link} from 'react-router-dom';
 import Fade from 'react-reveal';
 import posed from 'react-pose';
@@ -8,14 +8,13 @@ class Navbar extends Component {
     constructor(props){
         super(props);
         this.state = {
-            open: true
+            open: window.innerWidth > 850 ? true : false
         }
     }
     handleClick =()=>{
         this.setState({
             open: !this.state.open
         })
-        console.log('click', this.state.open)
     }
 
     handleResize =()=>{
@@ -53,9 +52,11 @@ const NavbarContent =props=> {
                     </Fade>
                 </Logo>
             </Link>
-            <MobileMenu 
-                onClick={props.handleClick}
-                open={props.open} />
+            <MobileMenuWrapper>
+                <MobileMenu 
+                    onClick={props.handleClick}
+                    open={props.open} />
+            </MobileMenuWrapper>
             <Nav 
                 open={props.open}
                 style={{transform: `translateX(${props.open ? 0 : '100%'})`}}>

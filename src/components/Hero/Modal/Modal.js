@@ -4,6 +4,7 @@ import Flatpickr from 'react-flatpickr';
 import Button from '../Info/Button';
 import 'flatpickr/dist/themes/light.css';
 import Fade from 'react-reveal';
+import {Link} from 'react-router-dom';
 
 const Modal =props=> {
     return (
@@ -19,7 +20,12 @@ const Modal =props=> {
                         value={props.currentDate}
                         onChange={props.handleChange}
                         options={{minDate: props.currentDate}} />
-                    <Button handleClick={props.handleClick} text='Close'>{props.children}</Button>
+                    <div style={{display: 'flex', flexDirection:'row'}}>
+                        <Button handleClick={props.handleClick} text='Close' marg>{props.children}</Button>
+                        <Link to='/contact'>
+                            <Button handleClick={props.handleClick} text='Book now!' marg>{props.children}</Button>
+                        </Link>
+                    </div>
                 </Wrapper>
             </Fade>
         </BlackShade>
