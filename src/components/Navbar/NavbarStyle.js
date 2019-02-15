@@ -103,7 +103,7 @@ export const Nav = styled.nav`
 `
 
 export const NavItem = styled.div`
-    color: white;
+    ${props => props.color === 'black' ? 'color: black' : 'color: white'};
     margin-right: 1rem;
     font-size: 1rem;
     font-family: 'Lato', sans-serif;
