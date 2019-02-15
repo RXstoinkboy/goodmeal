@@ -62,9 +62,9 @@ const Info =props=>{
                             <p style={{fontFamily: "'Lato', sans-serif", margin: '1rem 0'}}>Please call us to book a table or use our contact form in order to reach us. We'll be happy to meet you!</p>
                             <Button handleClick={props.handleClick} text='Book a table'/>
                         </Block>
-                        <SmallBlockImg />
-                    <Fade left>
                         <BigBlockImg />
+                    <Fade left>
+                        <SmallBlockImg />
                     </Fade>
                     <Fade bottom>
                     <Block>
