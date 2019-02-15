@@ -9,16 +9,32 @@ import News from './components/News/News';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      color: window.location.pathname == '/contact' ? 'black' : 'white'
+    }
+  }
 
-const App = () => (
-  <Route 
-    render={({location})=> (
+  handleColor =(e)=>{
+    this.setState({
+      color: 'white'
+    }, ()=>{
+      this.setState({
+        color: window.location.pathname == '/contact' ? 'black' : 'white'
+      })
+    }) 
+    
+}
+    render(){
+      return(
       <React.Fragment>
-      <Navbar />
+      <Navbar color={this.state.color} handleColor={this.handleColor}/>
           <PoseGroup>
-            <RoutesContainer key={location.pathname}>
-              <Switch location={location}>
-                <Route exact path='/' component={Hero} key='home'/>
+            <RoutesContainer key={window.location.pathname}>
+              <Switch location={window.location}>
+                <Route exact path='/' render={(props)=><Hero color={this.state.color} handleColor={this.handleColor}/>} key='home' />
                 <Route path='/recipes' component={Recipes} key='recipes' />
                 <Route path='/news' component={News} key='news'/>
                 <Route path='/about' component={About} key='about' />
@@ -27,8 +43,8 @@ const App = () => (
             </RoutesContainer>
           </PoseGroup>
       </React.Fragment>
-    )}
-  />
-);
+      )
+    }
+}
 
 export default App;

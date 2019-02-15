@@ -10,7 +10,6 @@ class Navbar extends Component {
         super(props);
         this.state = {
             open: window.innerWidth > 850 ? true : false,
-            color: window.location.pathname == '/contact' ? 'black' : 'white'
         }
     }
     handleClick =()=>{
@@ -33,21 +32,13 @@ class Navbar extends Component {
         window.removeEventListener('resize', this.handleResize)
     }
 
-    handleColor =(e)=>{
-        const status = e.target.innerText.toLowerCase();
-        status === 'contact' 
-            ? this.setState({color: 'black'}) 
-            : this.setState({color: 'white'}) 
-        console.log(window.location.pathname)
-    }
-
     render() {
         return (
             <NavbarContent 
                 open={this.state.open} 
-                color={this.state.color} 
+                color={this.props.color} 
                 handleClick={this.handleClick} 
-                handleColor={this.handleColor}/>
+                handleColor={this.props.handleColor}/>
         );
     }
 }

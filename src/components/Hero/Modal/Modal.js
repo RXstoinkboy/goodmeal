@@ -23,7 +23,7 @@ const Modal =props=> {
                     <div style={{display: 'flex', flexDirection:'row'}}>
                         <Button handleClick={props.handleClick} text='Close' marg>{props.children}</Button>
                         <Link to='/contact'>
-                            <Button handleClick={props.handleClick} text='Book now!' marg>{props.children}</Button>
+                            <Button handleClick={props.handleClick} color={props.color} handleColor={props.handleColor} text='Book now!' marg>{props.children}</Button>
                         </Link>
                     </div>
                 </Wrapper>

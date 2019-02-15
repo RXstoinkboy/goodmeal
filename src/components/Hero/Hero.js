@@ -47,7 +47,11 @@ class Hero extends Component {
         }
 
         return (
-            <Content charPoses={charPoses} transform={this.state.transform} />
+            <Content 
+                charPoses={charPoses} 
+                transform={this.state.transform} 
+                color={this.props.color} 
+                handleColor={this.props.handleColor}/>
         );
     }
 }
@@ -66,7 +70,7 @@ const Content = props => {
                 <SplitText charPoses={props.charPoses}>FEEL LIKE AT HOME</SplitText>
                 </Subtitle>
             </Header>
-            <InfoSection />
+            <InfoSection color={props.color} handleColor={props.handleColor}/>
             <Specialities transform={props.transform}/>
             <Menu />
         </React.Fragment>
