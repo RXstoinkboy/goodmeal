@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
+import ContactMap from './ContactMap';
 import {ContactWrapper} from './ContactStyle';
 
 const Contact =props=> {
@@ -15,7 +16,10 @@ const Contact =props=> {
             alignItems:'center'}}>
             <ContactWrapper>
                 <ContactInfo />
-                <ContactForm />
+                <ContactForm 
+                    currentDate={props.currentDate}
+                    handleChange={props.handleChange}/>
+                <ContactMap />
             </ContactWrapper>
         </div>
     );

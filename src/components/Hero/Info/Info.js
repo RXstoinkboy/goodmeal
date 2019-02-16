@@ -9,8 +9,6 @@ class InfoSection extends Component {
         super(props);
         this.state = {
             open: false,
-            date: new Date(),
-            currentDate: '',
         }
     }
     handleClick =()=>{
@@ -19,30 +17,16 @@ class InfoSection extends Component {
         })
     }
 
-    handleChange =(date)=>{
-        this.setState({date});
-    }
-
     componentDidMount(){
-        const pickDate =()=> {
-            const day=`${new Date().getDate()}`;
-            const month=( (new Date().getMonth())+1 < 10 ? `0${(new Date().getMonth())+1}` : `${(new Date().getMonth())+1}` );
-            const year= `${1900 + new Date().getYear()}`;
-            this.setState({
-                currentDate: `${year}-${month}-${day}`
-            })
-        }
-        pickDate();
-
         window.addEventListener('scroll', this.handleScroll)
     }
 
     render() {
         return (
             <Info 
-                currentDate={this.state.currentDate} 
+                currentDate={this.props.currentDate} 
                 open={this.state.open} 
-                handleChange={this.handleChange} 
+                handleChange={this.props.handleChange} 
                 handleClick={this.handleClick}
                 handleColor={this.props.handleColor}
                 color={this.props.color}/>

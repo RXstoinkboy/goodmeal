@@ -67,6 +67,6 @@ export const Subtitle = styled.h2`
 
     @media all and (max-width: 850px){
         font-size: 2rem;
-        margin: 0 1rem;   
+        letter-spacing: .1rem;
     }
 `

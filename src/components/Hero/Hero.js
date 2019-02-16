@@ -11,9 +11,15 @@ class Hero extends Component {
     constructor(props){
         super(props);
         this.state = {
-            transform: 0
+            transform: 0,
+            // date: new Date(),
+            // currentDate: '',
         }
     }
+    // handleChange =(date)=>{
+    //     this.setState({date});
+    //     console.log(this.state.date)
+    // }
     
     handleScroll =()=>{
         const height = window.scrollY;
@@ -25,6 +31,18 @@ class Hero extends Component {
     }
 
     componentDidMount(){
+        // const pickDate =()=> {
+        //     const day=`${new Date().getDate()}`;
+        //     const month=( (new Date().getMonth())+1 < 10 ? `0${(new Date().getMonth())+1}` : `${(new Date().getMonth())+1}` );
+        //     const year= `${1900 + new Date().getYear()}`;
+        //     this.setState({
+        //         currentDate: `${year}-${month}-${day}`
+        //     }, ()=>{
+        //         console.log(this.state.currentDate)
+        //     })
+        // }
+        // pickDate();
+
         window.addEventListener('scroll', this.handleScroll)
     }
 
@@ -51,7 +69,9 @@ class Hero extends Component {
                 charPoses={charPoses} 
                 transform={this.state.transform} 
                 color={this.props.color} 
-                handleColor={this.props.handleColor}/>
+                handleColor={this.props.handleColor}
+                currentDate={this.props.currentDate}
+                handleChange={this.props.handleChange}/>
         );
     }
 }
@@ -70,7 +90,11 @@ const Content = props => {
                 <SplitText charPoses={props.charPoses}>FEEL LIKE AT HOME</SplitText>
                 </Subtitle>
             </Header>
-            <InfoSection color={props.color} handleColor={props.handleColor}/>
+            <InfoSection 
+                color={props.color} 
+                handleColor={props.handleColor}
+                currentDate={props.currentDate}
+                handleChange={props.handleChange}/>
             <Specialities transform={props.transform}/>
             <Menu />
         </React.Fragment>
