@@ -16,11 +16,50 @@ class App extends Component {
       color: window.location.pathname == '/contact' ? 'black' : 'white',
       date: new Date(),
       currentDate: '',
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      submitForm: {},
+      buttonDisabled: false
     }
   }
   handleChange =(date)=>{
     this.setState({date});
     console.log(this.state.date)
+  }
+
+  handleInputChange =e=>{
+    const target = e.target;
+    const value = e.target.value;
+    const name = target.name;
+    this.setState({
+      [name]: value
+    })
+
+    // add validation
+  }
+
+  handleSubmit =e=>{
+    e.preventDefault();
+    const day=`${this.state.date[0].getDate()}`;
+    const month=( (this.state.date[0].getMonth())+1 < 10 ? `0${(this.state.date[0].getMonth())+1}` : `${(this.state.date[0].getMonth())+1}` );
+    const year= `${1900 + this.state.date[0].getYear()}`;
+    this.setState({
+      buttonDisabled: true,
+      submitForm: {
+        name: this.state.name,
+        email: this.state.email,
+        phone: this.state.phone,
+        date: `${year}-${month}-${day}`,
+        message: this.state.message
+      }
+    }, ()=>{console.log(this.state.submitForm)})
+    // a function to send data as an email to restaurant
+
+    // still have to add some validation
+    // disbale buton if there is no data filled in
+    // add setTimeout to simulate sending message and add animation to button
   }
 
   handleColor =(e)=>{
@@ -34,17 +73,15 @@ class App extends Component {
   }
 
   componentDidMount(){
-    const pickDate =()=> {
+    const setCurrentDate =()=> {
         const day=`${new Date().getDate()}`;
         const month=( (new Date().getMonth())+1 < 10 ? `0${(new Date().getMonth())+1}` : `${(new Date().getMonth())+1}` );
         const year= `${1900 + new Date().getYear()}`;
         this.setState({
             currentDate: `${year}-${month}-${day}`
-        }, ()=>{
-            console.log(this.state.currentDate)
         })
     }
-    pickDate();
+    setCurrentDate();
   }
 
     render(){
@@ -74,6 +111,13 @@ class App extends Component {
                     <Contact 
                       currentDate={this.state.date}
                       handleChange={this.handleChange}
+                      handleInputChange={this.handleInputChange}
+                        name={this.state.name}
+                        email={this.state.email}
+                        phone={this.state.phone}
+                        message={this.state.message}
+                      handleSubmit={this.handleSubmit}
+                      buttonDisabled={this.state.buttonDisabled}
                     />
                   } 
                   key='contact' />

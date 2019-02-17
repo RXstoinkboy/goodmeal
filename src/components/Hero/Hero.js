@@ -12,15 +12,8 @@ class Hero extends Component {
         super(props);
         this.state = {
             transform: 0,
-            // date: new Date(),
-            // currentDate: '',
         }
     }
-    // handleChange =(date)=>{
-    //     this.setState({date});
-    //     console.log(this.state.date)
-    // }
-    
     handleScroll =()=>{
         const height = window.scrollY;
         window.requestAnimationFrame(()=>{
@@ -31,18 +24,6 @@ class Hero extends Component {
     }
 
     componentDidMount(){
-        // const pickDate =()=> {
-        //     const day=`${new Date().getDate()}`;
-        //     const month=( (new Date().getMonth())+1 < 10 ? `0${(new Date().getMonth())+1}` : `${(new Date().getMonth())+1}` );
-        //     const year= `${1900 + new Date().getYear()}`;
-        //     this.setState({
-        //         currentDate: `${year}-${month}-${day}`
-        //     }, ()=>{
-        //         console.log(this.state.currentDate)
-        //     })
-        // }
-        // pickDate();
-
         window.addEventListener('scroll', this.handleScroll)
     }
 

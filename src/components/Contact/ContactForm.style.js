@@ -5,18 +5,23 @@ export const Title = styled.h2``
 export const Form = styled.form`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 400px;
 `
 export const Name = styled.input`
-    grid-column: 1/-1
+    grid-column: 1/-1;
 `
-export const Mail = styled.input`
+export const Email = styled(Name)`
     grid-column: 1/2;
 `
-export const Phone = styled.input`
-grid-column: 2/-1;
+export const Phone = styled(Name)`
+    grid-column: 2/-1;
 `
-export const Message = styled.input`
+export const Message = styled(Name)`
+    grid-column: 1/-1;
+`
+export const Button = styled.button`
 grid-column: 1/-1;
 `
-export const Button = styled.button``
-export const Permission = styled.div``
+export const Permission = styled.div`
+grid-column: 1/-1;
+`

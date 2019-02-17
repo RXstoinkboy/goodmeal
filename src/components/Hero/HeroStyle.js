@@ -5,9 +5,10 @@ export const ParallaxImage = styled.img`
     position: absolute;
     z-index: -1;
     bottom: 0;
+    width: 100vw;
 
     @media all and (orientation: landscape){
-        max-width: 120%;
+        max-width: 120vw;
     }
     @media all and (orientation: portrait){
         max-height: 140%;

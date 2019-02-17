@@ -18,7 +18,14 @@ const Contact =props=> {
                 <ContactInfo />
                 <ContactForm 
                     currentDate={props.currentDate}
-                    handleChange={props.handleChange}/>
+                    handleChange={props.handleChange}
+                    handleInputChange={props.handleInputChange}
+                        name={props.name}
+                        email={props.email}
+                        phone={props.phone}
+                        message={props.message}
+                    handleSubmit={props.handleSubmit}
+                    buttonDisabled={props.buttonDisabled}/>
                 <ContactMap />
             </ContactWrapper>
         </div>
