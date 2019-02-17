@@ -16,7 +16,8 @@ const ContactForm = props => {
                     onChange={props.handleInputChange}
                     placeholder='name and surname'
                     handleInputChange={props.handleInputChange}
-                    handleSubmit={props.handleSubmit} />
+                    handleSubmit={props.handleSubmit}
+                    nameVal={props.nameVal} />
                 <Email 
                     type='email'
                     name='email'
@@ -24,7 +25,8 @@ const ContactForm = props => {
                     onChange={props.handleInputChange}
                     placeholder='youremail@example.com'
                     handleInputChange={props.handleInputChange}
-                    handleSubmit={props.handleSubmit} />
+                    handleSubmit={props.handleSubmit}
+                    emailVal={props.emailVal} />
                 <Phone 
                     type='text'
                     name='phone'
@@ -32,7 +34,8 @@ const ContactForm = props => {
                     onChange={props.handleInputChange}
                     placeholder='ex: 0090-9000-900-90'
                     handleInputChange={props.handleInputChange}
-                    handleSubmit={props.handleSubmit} />
+                    handleSubmit={props.handleSubmit}
+                    phoneVal={props.phoneVal} />
                 <Flatpickr
                     value={props.currentDate}
                     onChange={props.handleChange}
@@ -45,7 +48,8 @@ const ContactForm = props => {
                     onChange={props.handleInputChange}
                     placeholder='please write your message here'
                     handleInputChange={props.handleInputChange}
-                    handleSubmit={props.handleSubmit} />
+                    handleSubmit={props.handleSubmit}
+                    messageVal={props.messageVal} />
                 <Button 
                     type='submit'
                     disabled={props.buttonDisabled}

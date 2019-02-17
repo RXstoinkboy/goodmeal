@@ -25,7 +25,12 @@ const Contact =props=> {
                         phone={props.phone}
                         message={props.message}
                     handleSubmit={props.handleSubmit}
-                    buttonDisabled={props.buttonDisabled}/>
+                    buttonDisabled={props.buttonDisabled}
+                    nameVal={props.nameVal}
+                    phoneVal={props.phoneVal}
+                    emailVal={props.emailVal}
+                    messageVal={props.messageVal}
+                    handleCurrentValidation={props.handleCurrentValidation}/>
                 <ContactMap />
             </ContactWrapper>
         </div>

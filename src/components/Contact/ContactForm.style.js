@@ -9,15 +9,19 @@ export const Form = styled.form`
 `
 export const Name = styled.input`
     grid-column: 1/-1;
+    ${props => props.nameVal ? null : 'background: red'};
 `
-export const Email = styled(Name)`
+export const Email = styled.input`
     grid-column: 1/2;
+    ${props => props.emailVal ? null : 'background: red'};
 `
-export const Phone = styled(Name)`
+export const Phone = styled.input`
     grid-column: 2/-1;
+    ${props => props.phoneVal ? null : 'background: red'};
 `
-export const Message = styled(Name)`
+export const Message = styled.input`
     grid-column: 1/-1;
+    ${props => props.messageVal ? null : 'background: red'};
 `
 export const Button = styled.button`
 grid-column: 1/-1;

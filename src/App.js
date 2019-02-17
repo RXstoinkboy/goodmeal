@@ -21,24 +21,28 @@ class App extends Component {
       phone: '',
       message: '',
       submitForm: {},
-      buttonDisabled: true
+      buttonDisabled: true,
+      nameVal: true,
+      emailVal: true,
+      phoneVal: true,
+      messageVal: true,
+      namePattern: /[abcdefghijklmnopqrstuvwxyz]+/,
+      emailPattern: /[^@\s]+@[^@\s]+\.[^@\s]+/,
+      messagePattern: /\w+/
     }
   }
   handleChange =(date)=>{
     this.setState({date: date[0]});
   }
-  handleCurrentValidation=()=>{
-    // patterns
-    const namePattern = /[abcdefghijklmnopqrstuvwxyz]+/;
-    const emailPattern = /[^@\s]+@[^@\s]+\.[^@\s]+/;
-    const messagePattern = /\w+/;
-    function phonePattern(str) {
+
+  phonePattern(str) {
       // accepted formats
           // 555-555-5555			
           // (555)555-5555		
           // (555) 555-5555		
           // 555 555 5555			
-          // 5555555555				
+          // 5555555555		
+          // 1234567890		
           // 1 555 555 5555		
         
         const pattern1 = /^\d{3}\-\d{3}\-\d{4}$/;
@@ -49,21 +53,10 @@ class App extends Component {
         const pattern6 = /^1*(\s|\-)\d{3}(\s|\-)\d{3}(\s|\-)\d{4}$/;
         
         if(pattern1.test(str) || pattern2.test(str) || pattern3.test(str) || pattern4.test(str) || pattern5.test(str) || pattern6.test(str)){
-           return true
+          return true
            }else{
-             return false;
+            return false
           }
-    }
-
-      let nameCheck = namePattern.test(this.state.name) ? true : false;
-      let phoneCheck = phonePattern(this.state.phone) ? true : false;
-      let emailCheck = emailPattern.test(this.state.email) ? true : false;
-      let messageCheck = messagePattern.test(this.state.message) ? true : false;
-
-      if(nameCheck && phoneCheck && emailCheck && messageCheck){
-        console.log('fajnie')
-      }
-
   }
 
   handleInputChange =e=>{
@@ -71,11 +64,29 @@ class App extends Component {
     const value = e.target.value;
     const name = target.name;
     this.setState({
-      [name]: value
-    }, ()=>{this.handleCurrentValidation()})
-
-    // add validation
-  }
+      [name]: value,
+    }, ()=>{
+      this.setState({
+        [name]: value,
+        phoneVal: this.phonePattern(this.state.phone) ? true : false,
+        nameVal: this.state.namePattern.test(this.state.name) ? true : false,
+        messageVal: this.state.messagePattern.test(this.state.message) ? true : false,
+        emailVal: this.state.emailPattern.test(this.state.email) ? true : false,
+      }, ()=>{
+        const {nameVal,emailVal,phoneVal,messageVal} = this.state;
+        if(nameVal && emailVal && messageVal && phoneVal){
+          this.setState({
+            buttonDisabled: false,
+          }) 
+          console.log('ok')
+        } else {
+          this.setState({
+            buttonDisabled: true,
+          })
+        }
+      })
+  })
+}
 
   handleSubmit =e=>{
     e.preventDefault();
@@ -92,12 +103,17 @@ class App extends Component {
         date: `${year}-${month}-${day}`,
         message: this.state.message
       }
-    }, ()=>{console.log(this.state.submitForm)})
+    }, ()=>{
+      // setTimeout just to simulate that is being sent
+      setTimeout(()=>{
+        this.setState({
+          buttonDisabled: false
+        })
+        console.log('message sent')
+      },3000)
+      console.log(this.state.submitForm)})
     // a function to send data as an email to restaurant
-
-    // still have to add some validation
-    // disbale buton if there is no data filled in
-    // add setTimeout to simulate sending message and add animation to button
+    console.log('sending message')
   }
 
   handleColor =(e)=>{
@@ -153,6 +169,10 @@ class App extends Component {
                         message={this.state.message}
                       handleSubmit={this.handleSubmit}
                       buttonDisabled={this.state.buttonDisabled}
+                      nameVal={this.state.nameVal}
+                      phoneVal={this.state.phoneVal}
+                      emailVal={this.state.emailVal}
+                      messageVal={this.state.messageVal}
                     />
                   } 
                   key='contact' />
