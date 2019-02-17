@@ -21,12 +21,49 @@ class App extends Component {
       phone: '',
       message: '',
       submitForm: {},
-      buttonDisabled: false
+      buttonDisabled: true
     }
   }
   handleChange =(date)=>{
-    this.setState({date});
-    console.log(this.state.date)
+    this.setState({date: date[0]});
+  }
+  handleCurrentValidation=()=>{
+    // patterns
+    const namePattern = /[abcdefghijklmnopqrstuvwxyz]+/;
+    const emailPattern = /[^@\s]+@[^@\s]+\.[^@\s]+/;
+    const messagePattern = /\w+/;
+    function phonePattern(str) {
+      // accepted formats
+          // 555-555-5555			
+          // (555)555-5555		
+          // (555) 555-5555		
+          // 555 555 5555			
+          // 5555555555				
+          // 1 555 555 5555		
+        
+        const pattern1 = /^\d{3}\-\d{3}\-\d{4}$/;
+        const pattern2 = /^1*\(\d{3}\)\d{3}\-\d{4}$/;
+        const pattern3 = /^(1\s)*\(\d{3}\)\s\d{3}\-\d{4}$/;
+        const pattern4 = /^\d{3}\s\d{3}\s\d{4}$/;
+        const pattern5 = /^\d{10}$/;
+        const pattern6 = /^1*(\s|\-)\d{3}(\s|\-)\d{3}(\s|\-)\d{4}$/;
+        
+        if(pattern1.test(str) || pattern2.test(str) || pattern3.test(str) || pattern4.test(str) || pattern5.test(str) || pattern6.test(str)){
+           return true
+           }else{
+             return false;
+          }
+    }
+
+      let nameCheck = namePattern.test(this.state.name) ? true : false;
+      let phoneCheck = phonePattern(this.state.phone) ? true : false;
+      let emailCheck = emailPattern.test(this.state.email) ? true : false;
+      let messageCheck = messagePattern.test(this.state.message) ? true : false;
+
+      if(nameCheck && phoneCheck && emailCheck && messageCheck){
+        console.log('fajnie')
+      }
+
   }
 
   handleInputChange =e=>{
@@ -35,16 +72,17 @@ class App extends Component {
     const name = target.name;
     this.setState({
       [name]: value
-    })
+    }, ()=>{this.handleCurrentValidation()})
 
     // add validation
   }
 
   handleSubmit =e=>{
     e.preventDefault();
-    const day=`${this.state.date[0].getDate()}`;
-    const month=( (this.state.date[0].getMonth())+1 < 10 ? `0${(this.state.date[0].getMonth())+1}` : `${(this.state.date[0].getMonth())+1}` );
-    const year= `${1900 + this.state.date[0].getYear()}`;
+    const day=`${this.state.date.getDate()}`;
+    const month=( (this.state.date.getMonth())+1 < 10 ? `0${(this.state.date.getMonth())+1}` : `${(this.state.date.getMonth())+1}` );
+    const year= `${1900 + this.state.date.getYear()}`;
+
     this.setState({
       buttonDisabled: true,
       submitForm: {
@@ -65,23 +103,20 @@ class App extends Component {
   handleColor =(e)=>{
     this.setState({
       color: 'white'
-    }, ()=>{
-      this.setState({
-        color: window.location.pathname == '/contact' ? 'black' : 'white'
-      })
-      })
+    })
   }
 
   componentDidMount(){
-    const setCurrentDate =()=> {
-        const day=`${new Date().getDate()}`;
-        const month=( (new Date().getMonth())+1 < 10 ? `0${(new Date().getMonth())+1}` : `${(new Date().getMonth())+1}` );
-        const year= `${1900 + new Date().getYear()}`;
-        this.setState({
-            currentDate: `${year}-${month}-${day}`
-        })
-    }
-    setCurrentDate();
+    const day=`${this.state.date.getDate()}`;
+    const month=( (this.state.date.getMonth())+1 < 10 ? `0${(this.state.date.getMonth())+1}` : `${(this.state.date.getMonth())+1}` );
+    const year= `${1900 + this.state.date.getYear()}`;
+    this.setState({
+      date: new Date(),
+      currentDate: this.state.date,
+      submitForm: {
+        date: `${year}-${month}-${day}`,
+      }
+    })
   }
 
     render(){
