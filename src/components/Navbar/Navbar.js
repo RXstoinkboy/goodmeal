@@ -3,7 +3,6 @@ import {Wrapper, Logo, Nav, NavItem, MobileMenu, MobileMenuWrapper} from './Navb
 import {Link} from 'react-router-dom';
 import Fade from 'react-reveal';
 import posed from 'react-pose';
-import { white } from 'ansi-colors';
 
 class Navbar extends Component {
     constructor(props){

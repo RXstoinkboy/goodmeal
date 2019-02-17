@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state ={
-      color: window.location.pathname == '/contact' ? 'black' : 'white',
+      color: window.location.pathname === '/contact' ? 'black' : 'white',
       date: new Date(),
       currentDate: '',
       name: '',
@@ -66,13 +66,14 @@ class App extends Component {
     this.setState({
       [name]: value,
     }, ()=>{
+      // dynamic validation
       this.setState({
-        [name]: value,
         phoneVal: this.phonePattern(this.state.phone) ? true : false,
         nameVal: this.state.namePattern.test(this.state.name) ? true : false,
         messageVal: this.state.messagePattern.test(this.state.message) ? true : false,
         emailVal: this.state.emailPattern.test(this.state.email) ? true : false,
       }, ()=>{
+        // enable submit button based on validation
         const {nameVal,emailVal,phoneVal,messageVal} = this.state;
         if(nameVal && emailVal && messageVal && phoneVal){
           this.setState({
@@ -105,9 +106,19 @@ class App extends Component {
       }
     }, ()=>{
       // setTimeout just to simulate that is being sent
+      // reset the state after submiting message
       setTimeout(()=>{
         this.setState({
-          buttonDisabled: false
+          buttonDisabled: false,
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+          submitForm: {},
+          nameVal: true,
+          emailVal: true,
+          phoneVal: true,
+          messageVal: true,
         })
         console.log('message sent')
       },3000)
@@ -116,10 +127,15 @@ class App extends Component {
     console.log('sending message')
   }
 
-  handleColor =(e)=>{
+  // menu color based on path
+  handleColor =()=>{
     this.setState({
       color: 'white'
-    })
+    }, ()=>{
+      this.setState({
+        color: window.location.pathname == '/contact' ? 'black' : 'white'
+      })
+    }) 
   }
 
   componentDidMount(){
@@ -162,6 +178,8 @@ class App extends Component {
                     <Contact 
                       currentDate={this.state.date}
                       handleChange={this.handleChange}
+                      handleColor={this.handleColor}
+                      color={this.state.color} 
                       handleInputChange={this.handleInputChange}
                         name={this.state.name}
                         email={this.state.email}

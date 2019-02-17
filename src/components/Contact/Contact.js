@@ -19,6 +19,7 @@ const Contact =props=> {
                 <ContactForm 
                     currentDate={props.currentDate}
                     handleChange={props.handleChange}
+                    handleColor={props.handleColor}
                     handleInputChange={props.handleInputChange}
                         name={props.name}
                         email={props.email}

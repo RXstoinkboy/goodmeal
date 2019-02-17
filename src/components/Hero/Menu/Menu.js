@@ -6,7 +6,6 @@ import Fade from 'react-reveal/Fade'
 
 class Menu extends Component {
     render() {
-        const direction = ['left', 'top', 'right', 'bottom'];
         return (
             <React.Fragment>
                 <MenuWrapper>
