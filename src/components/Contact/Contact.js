@@ -32,10 +32,22 @@ const Contact =props=> {
                     emailVal={props.emailVal}
                     messageVal={props.messageVal}
                     handleCurrentValidation={props.handleCurrentValidation}/>
-                <ContactMap />
+                <ContactMap                                               
+                    id='myMap'
+                    options={{
+                        center: { lat: 40.740478, lng: -73.984955 },
+                        zoom: 16
+                    }}
+                    onMapLoad={map=>{
+                        const marker = new window.google.maps.Marker({
+                            position: { lat: 40.740478, lng: -73.984955 },
+                            map: map,
+                            text:'Hellow map'
+                        })
+                    }}/>
             </ContactWrapper>
         </div>
-    );
+);
 };
 
 export default Contact;
