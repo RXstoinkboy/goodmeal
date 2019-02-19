@@ -3,8 +3,20 @@ import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 import ContactMap from './ContactMap';
 import {ContactWrapper} from './ContactStyle';
+import {render} from 'react-dom';
+import InfoWindow from './ContactMapInfo';
 
 const Contact =props=> {
+    const createInfoWindow =(e, map)=>{
+        const infoWindow = new window.google.maps.InfoWindow({
+            content: '<div id="infoWindow" />',
+            position: { lat: e.latLng.lat(), lng: e.latLng.lng() }
+        })
+        infoWindow.addListener('domready', e=>{
+            render(<InfoWindow />, document.getElementById('infoWindow'))
+        })
+        infoWindow.open(map)
+    }
     return (
         <div style={{
             background: 'white', 
@@ -32,17 +44,23 @@ const Contact =props=> {
                     emailVal={props.emailVal}
                     messageVal={props.messageVal}
                     handleCurrentValidation={props.handleCurrentValidation}/>
-                <ContactMap                                               
+                <ContactMap
+                    // these are all necessary props needed to turn on the map
                     id='myMap'
                     options={{
                         center: { lat: 40.740478, lng: -73.984955 },
                         zoom: 16
                     }}
                     onMapLoad={map=>{
+                        // place a position marker
                         const marker = new window.google.maps.Marker({
                             position: { lat: 40.740478, lng: -73.984955 },
                             map: map,
-                            text:'Hellow map'
+                            title: 'Hello map'
+                        });
+                        // create a clickable popup InfoWindow on top of the marker
+                        marker.addListener('click', e => {
+                            this.createInfoWindow(e, map)
                         })
                     }}/>
             </ContactWrapper>

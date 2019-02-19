@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import {render} from 'react-dom';
-import {MapWrapper} from './ContactMap.style.js';
 
 class ContactMap extends Component {
   constructor(props){
@@ -17,27 +15,25 @@ class ContactMap extends Component {
 
   componentDidMount(){
     if(!window.google){
-      const scr = document.createElement('script');
-      scr.type = 'text/javascript';
-      scr.src =`https://maps.google.com/maps/api/js?key=AIzaSyDmrGP-sjeDWfqeD2AUJ8qCQPMmTtrDBFs`;
+      const source = document.createElement('script');
+      source.type = 'text/javascript';
+      source.src =`https://maps.google.com/maps/api/js?key=AIzaSyDmrGP-sjeDWfqeD2AUJ8qCQPMmTtrDBFs`;
 
       const x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(scr, x);
+      x.parentNode.insertBefore(source, x);
 
-      scr.addEventListener('load', e=>{
+      source.addEventListener('load', e=>{
         this.onScriptLoad();
         console.log('item loaded')
       })
     }else{
       this.onScriptLoad()
-    }                       
-
-    
+    }
   }
 
   render() {
     return (            
-        <div style={{ width: 500, height: 500 }} id={this.props.id} />
+        <div style={{ width: '100%', height: '100%' }} id={this.props.id} />
     );
   }
 }
