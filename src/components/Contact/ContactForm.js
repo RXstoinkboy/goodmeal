@@ -36,11 +36,6 @@ const ContactForm = props => {
                     handleInputChange={props.handleInputChange}
                     handleSubmit={props.handleSubmit}
                     phoneVal={props.phoneVal} />
-                <Flatpickr
-                    value={props.currentDate}
-                    onChange={props.handleChange}
-                    options={{minDate: props.currentDate}}
-                    style={{margin:'0'}} />
                 <Message 
                     type='text'
                     name='message'
@@ -50,6 +45,16 @@ const ContactForm = props => {
                     handleInputChange={props.handleInputChange}
                     handleSubmit={props.handleSubmit}
                     messageVal={props.messageVal} />
+                <Flatpickr
+                    value={props.currentDate}
+                    onChange={props.handleChange}
+                    options={{minDate: props.currentDate}}
+                    style={{
+                        margin:'0', 
+                        padding: '.5rem', 
+                        color: 'var(--mainColor)', 
+                        border: '1px solid var(--mainColor)', 
+                        fontSize:'1rem'}} />
                 <Button 
                     type='submit'
                     disabled={props.buttonDisabled}

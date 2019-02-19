@@ -16,7 +16,12 @@ const Modal =props=> {
                     <p>012-3456-789-901</p>
                     <p>or use our reservation form:</p>
                     <Flatpickr 
-                        style={{marginBottom: '2rem'}}
+                        style={{
+                            margin:'1rem', 
+                            padding: '.5rem', 
+                            color: 'var(--mainColor)', 
+                            border: '1px solid var(--mainColor)', 
+                            fontSize:'1rem'}}
                         value={props.currentDate}
                         onChange={props.handleChange}
                         options={{minDate: props.currentDate}} />

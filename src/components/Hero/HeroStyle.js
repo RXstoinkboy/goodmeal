@@ -11,7 +11,8 @@ export const ParallaxImage = styled.img`
         max-width: 120vw;
     }
     @media all and (orientation: portrait){
-        max-height: 140%;
+        width: auto;
+        max-height: 140vh;
 `
 
 export const Header = styled.div`

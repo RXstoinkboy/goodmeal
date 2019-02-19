@@ -1,11 +1,10 @@
 import React from 'react';
-import {Wrapper, Title,HoursWrapper, Hours, Label, Time} from './ContactInfo.style';
+import {Wrapper, Title,HoursWrapper, Hours, Label, Time, Address} from './ContactInfo.style';
 
 const ContactInfo = () => {
     return (
-        <React.Fragment>
-        <Title>Opening hours</Title>
         <Wrapper>
+        <Title>Opening hours</Title>
             <Hours>
                 <HoursWrapper>
                     <Label>Mon</Label>
@@ -20,8 +19,11 @@ const ContactInfo = () => {
                     <Time>9am:noon</Time>
                 </HoursWrapper>
             </Hours>
+            <Address>
+                577 Maple Street 
+                Brooklyn, NY 11204
+            </Address>
         </Wrapper>
-        </React.Fragment>
     );
 };
 
