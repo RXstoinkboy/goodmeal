@@ -46,7 +46,7 @@ const ContactForm = props => {
                     handleSubmit={props.handleSubmit}
                     messageVal={props.messageVal} />
                 <Flatpickr
-                    value={props.currentDate}
+                    value={props.date}
                     onChange={props.handleChange}
                     options={{minDate: props.currentDate}}
                     style={{

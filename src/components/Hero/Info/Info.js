@@ -25,6 +25,7 @@ class InfoSection extends Component {
         return (
             <Info 
                 currentDate={this.props.currentDate} 
+                date={this.props.date} 
                 open={this.state.open} 
                 handleChange={this.props.handleChange} 
                 handleClick={this.handleClick}
@@ -37,11 +38,12 @@ class InfoSection extends Component {
 export default InfoSection;
 
 const Info =props=>{
-    const { currentDate } = props;
+    const { currentDate, date } = props;
     let modal = props.open 
         ? <Modal 
             handleChange={props.handleChange} 
             currentDate={currentDate} 
+            date={date} 
             handleClick={props.handleClick}
             color={props.color} 
             handleColor={props.handleColor} /> 

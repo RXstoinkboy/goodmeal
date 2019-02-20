@@ -43,6 +43,7 @@ class Contact extends Component {
                     <ContactInfo />
                     <ContactForm 
                         currentDate={this.props.currentDate}
+                        date={this.props.date}
                         handleChange={this.props.handleChange}
                         handleColor={this.props.handleColor}
                         handleInputChange={this.props.handleInputChange}

@@ -22,7 +22,7 @@ const Modal =props=> {
                             color: 'var(--mainColor)', 
                             border: '1px solid var(--mainColor)', 
                             fontSize:'1rem'}}
-                        value={props.currentDate}
+                        value={props.date}
                         onChange={props.handleChange}
                         options={{minDate: props.currentDate}} />
                     <div style={{display: 'flex', flexDirection:'row'}}>

@@ -109,7 +109,7 @@ class App extends Component {
       // reset the state after submiting message
       setTimeout(()=>{
         this.setState({
-          buttonDisabled: false,
+          buttonDisabled: true,
           name: '',
           email: '',
           phone: '',
@@ -149,13 +149,14 @@ class App extends Component {
         date: `${year}-${month}-${day}`,
       }
     })
+    console.log(this.state.date)
   }
 
     render(){
       return(
       <React.Fragment>
       <Navbar color={this.state.color} handleColor={this.handleColor}/>
-          <PoseGroup>
+          {/* <PoseGroup> */}
             <RoutesContainer key={window.location.pathname}>
               <Switch location={window.location}>
                 <Route 
@@ -164,6 +165,7 @@ class App extends Component {
                     <Hero 
                       color={this.state.color} 
                       handleColor={this.handleColor}
+                      date={this.state.date}
                       currentDate={this.state.currentDate}
                       handleChange={this.handleChange}
                     />
@@ -176,6 +178,7 @@ class App extends Component {
                   path='/contact' 
                   render={(props)=>
                     <Contact 
+                      date={this.state.date}
                       currentDate={this.state.currentDate}
                       handleChange={this.handleChange}
                       handleColor={this.handleColor}
@@ -196,7 +199,7 @@ class App extends Component {
                   key='contact' />
               </Switch>
             </RoutesContainer>
-          </PoseGroup>
+          {/* </PoseGroup> */}
       </React.Fragment>
       )
     }

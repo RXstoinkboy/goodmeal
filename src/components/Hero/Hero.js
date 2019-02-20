@@ -25,6 +25,7 @@ class Hero extends Component {
 
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll)
+        console.log('hero')
     }
 
     componentWillUnmount(){
@@ -52,6 +53,7 @@ class Hero extends Component {
                 color={this.props.color} 
                 handleColor={this.props.handleColor}
                 currentDate={this.props.currentDate}
+                date={this.props.date}
                 handleChange={this.props.handleChange}/>
         );
     }
@@ -75,6 +77,7 @@ const Content = props => {
                 color={props.color} 
                 handleColor={props.handleColor}
                 currentDate={props.currentDate}
+                date={props.date}
                 handleChange={props.handleChange}/>
             <Specialities transform={props.transform}/>
             <Menu />
