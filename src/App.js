@@ -164,7 +164,7 @@ class App extends Component {
                     <Hero 
                       color={this.state.color} 
                       handleColor={this.handleColor}
-                      currentDate={this.state.date}
+                      currentDate={this.state.currentDate}
                       handleChange={this.handleChange}
                     />
                   } 
@@ -176,7 +176,7 @@ class App extends Component {
                   path='/contact' 
                   render={(props)=>
                     <Contact 
-                      currentDate={this.state.date}
+                      currentDate={this.state.currentDate}
                       handleChange={this.handleChange}
                       handleColor={this.handleColor}
                       color={this.state.color} 
