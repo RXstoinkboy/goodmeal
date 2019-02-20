@@ -144,7 +144,7 @@ class App extends Component {
     const year= `${1900 + this.state.date.getYear()}`;
     this.setState({
       date: new Date(),
-      currentDate: this.state.date,
+      currentDate: new Date(),
       submitForm: {
         date: `${year}-${month}-${day}`,
       }
