@@ -27,9 +27,11 @@ class ContactMap extends Component {
       source.addEventListener('load', e => {
         this.onScriptLoad()
       })
-    } else {
-      this.onScriptLoad();
-    }
+    } 
+    
+//     else {
+//       this.onScriptLoad();
+//     }
   }
 
   render() {
