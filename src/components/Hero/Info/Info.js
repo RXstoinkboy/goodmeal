@@ -24,13 +24,15 @@ class InfoSection extends Component {
     render() {
         return (
             <Info 
-                currentDate={this.props.currentDate} 
-                date={this.props.date} 
+                // currentDate={this.props.currentDate} 
+                // date={this.props.date} 
                 open={this.state.open} 
-                handleChange={this.props.handleChange} 
+                // handleChange={this.props.handleChange} 
                 handleClick={this.handleClick}
-                handleColor={this.props.handleColor}
-                color={this.props.color}/>
+                // handleColor={this.props.handleColor}
+                // color={this.props.color}
+                {...this.props}
+                />
         );
     }
 }
@@ -38,15 +40,17 @@ class InfoSection extends Component {
 export default InfoSection;
 
 const Info =props=>{
-    const { currentDate, date } = props;
+    // const { currentDate, date } = props;
     let modal = props.open 
         ? <Modal 
-            handleChange={props.handleChange} 
-            currentDate={currentDate} 
-            date={date} 
-            handleClick={props.handleClick}
-            color={props.color} 
-            handleColor={props.handleColor} /> 
+            // handleChange={props.handleChange} 
+            // currentDate={currentDate} 
+            // date={date} 
+            // handleClick={props.handleClick}
+            // color={props.color} 
+            // handleColor={props.handleColor} 
+            {...props}
+            /> 
         : null;
 
     return(

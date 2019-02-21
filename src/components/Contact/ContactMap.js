@@ -19,7 +19,6 @@ class ContactMap extends Component {
       const source = document.createElement('script');
       source.type = 'text/javascript';
       source.src = `https://maps.google.com/maps/api/js?key=AIzaSyDmrGP-sjeDWfqeD2AUJ8qCQPMmTtrDBFs`;
-      // source.src = process.env.REACT_APP_APP_ID
       const x = document.getElementsByTagName('script')[0];
       x.parentNode.insertBefore(source, x);
 
@@ -35,12 +34,14 @@ class ContactMap extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount(){
     // const mapsKey = process.env.REACT_APP_APP_ID;
     this.googleChecker()
+    console.log('mount')
   }
 
   render() {
+    console.log('render')
     return (
         <Wrapper id={this.props.id} />
     );

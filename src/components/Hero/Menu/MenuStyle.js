@@ -9,6 +9,10 @@ export const MenuWrapper = styled.div`
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+
+    @media all and (max-width: 850px){
+        padding: 20px;
+    }
 `
 export const MenuGrid = styled.div`
     display: grid;

@@ -4,6 +4,7 @@ import InfoSection from './Info/Info';
 import {Specialities} from './Specialites/Specialities';
 import Menu from './Menu/Menu';
 import heroImg from '../../img/hero.jpg';
+import Fade from 'react-reveal';
 
 import React, { Component } from 'react';
 
@@ -49,12 +50,15 @@ class Hero extends Component {
         return (
             <Content 
                 charPoses={charPoses} 
-                transform={this.state.transform} 
-                color={this.props.color} 
-                handleColor={this.props.handleColor}
-                currentDate={this.props.currentDate}
-                date={this.props.date}
-                handleChange={this.props.handleChange}/>
+                // transform={this.state.transform} 
+                // color={this.props.color} 
+                // handleColor={this.props.handleColor}
+                // currentDate={this.props.currentDate}
+                // date={this.props.date}
+                // handleChange={this.props.handleChange}
+                {...this.state}
+                {...this.props}
+                />
         );
     }
 }
@@ -67,18 +71,24 @@ const Content = props => {
             <Header>
                 <ParallaxImage src={heroImg} style={{transform: `translateY(${props.transform}px)`}} />
                 <Title initialPose="exit" pose="enter">
-                    <SplitText charPoses={props.charPoses}>Good Meal</SplitText>
+                    <Fade top cascade>
+                        Good Meal
+                    </Fade>
                 </Title>
                 <Subtitle initialPose="exit" pose="enter">
-                <SplitText charPoses={props.charPoses}>FEEL LIKE AT HOME</SplitText>
+                    <Fade top cascade>
+                        FEEL LIKE AT HOME
+                    </Fade>
                 </Subtitle>
             </Header>
             <InfoSection 
-                color={props.color} 
-                handleColor={props.handleColor}
-                currentDate={props.currentDate}
-                date={props.date}
-                handleChange={props.handleChange}/>
+                // color={props.color} 
+                // handleColor={props.handleColor}
+                // currentDate={props.currentDate}
+                // date={props.date}
+                // handleChange={props.handleChange}
+                {...props}
+                />
             <Specialities transform={props.transform}/>
             <Menu />
         </React.Fragment>

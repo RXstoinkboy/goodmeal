@@ -23,6 +23,13 @@ class Navbar extends Component {
         })
     }
 
+    clickHandler =()=>{
+        if(window.innerWidth < 850){
+            this.handleClick()
+        }
+        this.props.handleColor()
+    }
+
     componentDidMount(){
         window.addEventListener('resize', this.handleResize)
     }
@@ -37,7 +44,9 @@ class Navbar extends Component {
                 open={this.state.open} 
                 color={this.props.color} 
                 handleClick={this.handleClick} 
-                handleColor={this.props.handleColor}/>
+                handleColor={this.props.handleColor}
+                clickHandler={this.clickHandler}
+                />
         );
     }
 }
@@ -72,7 +81,7 @@ const NavbarContent =props=> {
                             <Link 
                                 to='/' 
                                 key={item} 
-                                onClick={props.handleColor} >
+                                onClick={props.clickHandler} >
                                 <NavItem color={props.color}>
                                         {item}
                                 </NavItem>
@@ -83,7 +92,7 @@ const NavbarContent =props=> {
                             <Link 
                                 to={item} 
                                 key={item} 
-                                onClick={props.handleColor} >
+                                onClick={props.clickHandler} >
                                 <NavItem color={props.color}>
                                         {item}
                                 </NavItem>

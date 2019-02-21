@@ -163,10 +163,9 @@ class App extends Component {
                   exact path='/' 
                   render={(props)=>
                     <Hero 
-                      color={this.state.color} 
+                      // color={this.state.color} 
+                      {...this.state}
                       handleColor={this.handleColor}
-                      date={this.state.date}
-                      currentDate={this.state.currentDate}
                       handleChange={this.handleChange}
                     />
                   } 
@@ -178,22 +177,23 @@ class App extends Component {
                   path='/contact' 
                   render={(props)=>
                     <Contact 
-                      date={this.state.date}
-                      currentDate={this.state.currentDate}
+                      // date={this.state.date}
+                      // currentDate={this.state.currentDate}
                       handleChange={this.handleChange}
                       handleColor={this.handleColor}
-                      color={this.state.color} 
+                      // color={this.state.color} 
                       handleInputChange={this.handleInputChange}
-                        name={this.state.name}
-                        email={this.state.email}
-                        phone={this.state.phone}
-                        message={this.state.message}
+                        // name={this.state.name}
+                        // email={this.state.email}
+                        // phone={this.state.phone}
+                        // message={this.state.message}
                       handleSubmit={this.handleSubmit}
-                      buttonDisabled={this.state.buttonDisabled}
-                      nameVal={this.state.nameVal}
-                      phoneVal={this.state.phoneVal}
-                      emailVal={this.state.emailVal}
-                      messageVal={this.state.messageVal}
+                      // buttonDisabled={this.state.buttonDisabled}
+                      // nameVal={this.state.nameVal}
+                      // phoneVal={this.state.phoneVal}
+                      // emailVal={this.state.emailVal}
+                      // messageVal={this.state.messageVal}
+                      {...this.state}
                     />
                   } 
                   key='contact' />

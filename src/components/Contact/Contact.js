@@ -4,6 +4,7 @@ import ContactInfo from './ContactInfo';
 import ContactMap from './ContactMap';
 import {ContactWrapper} from './ContactStyle';
 import markerIcon from '../../img/marker.png';
+import Fade from 'react-reveal';
 
 class Contact extends Component {
     constructor(){
@@ -42,22 +43,24 @@ class Contact extends Component {
                 <ContactWrapper>
                     <ContactInfo />
                     <ContactForm 
-                        currentDate={this.props.currentDate}
-                        date={this.props.date}
-                        handleChange={this.props.handleChange}
-                        handleColor={this.props.handleColor}
-                        handleInputChange={this.props.handleInputChange}
-                            name={this.props.name}
-                            email={this.props.email}
-                            phone={this.props.phone}
-                            message={this.props.message}
-                        handleSubmit={this.props.handleSubmit}
-                        buttonDisabled={this.props.buttonDisabled}
-                        nameVal={this.props.nameVal}
-                        phoneVal={this.props.phoneVal}
-                        emailVal={this.props.emailVal}
-                        messageVal={this.props.messageVal}
-                        handleCurrentValidation={this.props.handleCurrentValidation}/>
+                        // currentDate={this.props.currentDate}
+                        // date={this.props.date}
+                        // handleChange={this.props.handleChange}
+                        // handleColor={this.props.handleColor}
+                        // handleInputChange={this.props.handleInputChange}
+                        //     name={this.props.name}
+                        //     email={this.props.email}
+                        //     phone={this.props.phone}
+                        //     message={this.props.message}
+                        // handleSubmit={this.props.handleSubmit}
+                        // buttonDisabled={this.props.buttonDisabled}
+                        // nameVal={this.props.nameVal}
+                        // phoneVal={this.props.phoneVal}
+                        // emailVal={this.props.emailVal}
+                        // messageVal={this.props.messageVal}
+                        // handleCurrentValidation={this.props.handleCurrentValidation}
+                        {...this.props}
+                        />
                     <ContactMap
                         id="myMap"
                         options={{
@@ -77,8 +80,8 @@ class Contact extends Component {
                                 ]
                             }
                         ]
-                        }}
-                        onMapLoad={map => {
+                    }}
+                    onMapLoad={map => {
                         const marker = new window.google.maps.Marker({
                             position: { lat: 40.747814, lng: -73.991099 },
                             map: map,
@@ -89,7 +92,7 @@ class Contact extends Component {
                         marker.addListener('click', e => {
                             this.createInfoWindow(e, map)
                         })
-                        }}
+                    }}
                     />
                 </ContactWrapper>
             </div>
