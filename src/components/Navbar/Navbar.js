@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Wrapper, Logo, Nav, NavItem, MobileMenu, MobileMenuWrapper} from './NavbarStyle';
 import {Link} from 'react-router-dom';
 import Fade from 'react-reveal';
-import posed from 'react-pose';
 
 class Navbar extends Component {
     constructor(props){

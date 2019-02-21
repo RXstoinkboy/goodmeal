@@ -26,7 +26,6 @@ class Hero extends Component {
 
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll)
-        console.log('hero')
     }
 
     componentWillUnmount(){

@@ -25,11 +25,9 @@ class ContactMap extends Component {
       source.addEventListener('load', e => {
         this.onScriptLoad()
       })
-      console.log('not there yet')
     } 
     
     else {
-      console.log('good to go')
       this.onScriptLoad();
     }
   }
@@ -37,11 +35,9 @@ class ContactMap extends Component {
   componentDidMount(){
     // const mapsKey = process.env.REACT_APP_APP_ID;
     this.googleChecker()
-    console.log('mount')
   }
 
   render() {
-    console.log('render')
     return (
         <Wrapper id={this.props.id} />
     );
