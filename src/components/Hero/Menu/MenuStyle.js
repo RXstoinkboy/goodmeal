@@ -55,6 +55,7 @@ export const Section = styled.h2`
     color: var(--tertiaryColor);
     text-transform: uppercase;
     letter-spacing: .5rem;
+    text-align: center;
 `
 export const DishContainer = styled.div`
     display: grid;
