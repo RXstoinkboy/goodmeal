@@ -141,4 +141,5 @@ export const Button = styled.button`
 export const Permission = styled.div`
     grid-column: 1/-1;
     font-size: .7rem;
+    text-align: justify;
 `
