@@ -100,6 +100,9 @@ export const Nav = styled.nav`
         transition: all .3s ease;
         transform: translateX(100%);
     }
+    @media all and (max-width: 850px) and (orientation: landscape){
+        padding-top: 1.5rem;
+    }
 `
 
 export const NavItem = styled.div`
@@ -126,5 +129,9 @@ export const NavItem = styled.div`
             left: 50%;
             transform: translateX(-50%);
         }
+    }
+    @media all and (max-width: 850px) and (orientation: landscape){
+        font-size: 1.5rem;
+    padding: .5rem;
     }
 `
