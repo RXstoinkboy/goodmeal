@@ -8,6 +8,7 @@ class Navbar extends Component {
         super(props);
         this.state = {
             open: window.innerWidth > 850 ? true : false,
+            down: false
         }
     }
     handleClick =()=>{
@@ -22,6 +23,10 @@ class Navbar extends Component {
         })
     }
 
+    handleScroll =()=>{
+        console.dir('hi')
+    }
+
     clickHandler =()=>{
         if(window.innerWidth < 850){
             this.handleClick()
@@ -30,11 +35,13 @@ class Navbar extends Component {
     }
 
     componentDidMount(){
-        window.addEventListener('resize', this.handleResize)
+        window.addEventListener('resize', this.handleResize);
+        window.addEventListener('scroll', this.handleScroll)
     }
 
     componentWillUnmount(){
         window.removeEventListener('resize', this.handleResize)
+        window.removeEventListener('scroll', this.handleScroll)
     }
 
     render() {
