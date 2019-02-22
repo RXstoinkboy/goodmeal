@@ -8,6 +8,7 @@ export const ContactWrapper = styled.div`
     position: absolute;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
+    grid-gap: 20px;
     align-items: center;
 
     @media all and (max-width: 850px){
