@@ -4,6 +4,7 @@ export const ContactWrapper = styled.div`
     display: grid;
     width: 100%;
     height: 90vh;
+    margin-top: 10vh;
     bottom: 0;
     position: absolute;
     grid-template-columns: 1fr 1fr;
