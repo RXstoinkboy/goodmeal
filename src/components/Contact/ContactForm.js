@@ -54,7 +54,8 @@ const ContactForm = props => {
                         padding: '.5rem', 
                         color: 'var(--mainColor)', 
                         border: '1px solid var(--mainColor)', 
-                        fontSize:'1rem'}} />
+                        fontSize:'1rem',
+                        background: 'transparent'}} />
                 <Button 
                     type='submit'
                     disabled={props.buttonDisabled}

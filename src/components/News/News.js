@@ -3,7 +3,7 @@ import {Wrapper, NewsList, NewsItem, NewsItemPicture, NewsItemContent} from './N
 import newsList from '../../news';
 import Fade from 'react-reveal';
 
-const News = () => {
+const News = props => {
     return (
         <Wrapper>
             <NewsList>
@@ -15,19 +15,19 @@ const News = () => {
                                     <NewsItemPicture
                                         photo={item.photo} />
                                 </Fade>
-                                <NewsItemContent>
-                                    <Fade top cascade>
-                                        <h1 
-                                            style={{
-                                                fontFamily: 'Kaushan Script', 
-                                                color: 'var(--secondaryColor',
-                                                margin: '20px 0'}}
-                                                >
-                                                {item.title}
-                                        </h1>
-                                    </Fade> 
-                                    {item.content}
-                                </NewsItemContent>
+                                    <NewsItemContent>
+                                        <Fade top cascade>
+                                            <h1 
+                                                style={{
+                                                    fontFamily: 'Kaushan Script', 
+                                                    color: 'var(--secondaryColor',
+                                                    margin: '20px 0'}}
+                                                    >
+                                                    {item.title}
+                                            </h1>
+                                        </Fade> 
+                                        {item.content}
+                                    </NewsItemContent>
                             </NewsItem>
                         )
                     } else {

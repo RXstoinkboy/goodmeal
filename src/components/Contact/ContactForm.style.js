@@ -37,6 +37,7 @@ export const Name = styled.input`
     font-size: 1.2rem;
     border: 1px solid var(--mainColor);
     color: var(--mainColor);
+    background: transparent;
 
     &::placeholder{
         color: hsla(0, 0%, 90%, 1);
@@ -53,6 +54,7 @@ export const Email = styled.input`
     font-size: 1.2rem;
     border: 1px solid var(--mainColor);
     color: var(--mainColor);
+    background: transparent;
 
     &::placeholder{
         color: hsla(0, 0%, 90%, 1);
@@ -73,6 +75,7 @@ export const Phone = styled.input`
     font-size: 1.2rem;
     border: 1px solid var(--mainColor);
     color: var(--mainColor);
+    background: transparent;
 
     &::placeholder{
         color: hsla(0, 0%, 90%, 1);
@@ -92,6 +95,7 @@ export const Message = styled.input`
     font-size: 1.2rem;
     border: 1px solid var(--mainColor);
     color: var(--mainColor);
+    background: transparent;
 
     &::placeholder{
         color: hsla(0, 0%, 90%, 1);
