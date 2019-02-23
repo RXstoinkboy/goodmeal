@@ -10,14 +10,6 @@ export const Wrapper = styled.div`
     transform: rotate(0deg);
     animation: ${animate} .3s linear infinite;
 `
-export const Animation = styled.div`
-    width: 100px;
-    height: 100px;
-    background: white;
-    transform: rotate(0deg);
-    animation: ${animate} .3s linear infinite;
-`
-
 const animate = keyframes`
     from {
         transform: rotate(0deg);
@@ -25,4 +17,11 @@ const animate = keyframes`
     to {
         transform: rotate(360deg);
     }
+`
+
+export const Animation = styled.div`
+    width: 100px;
+    height: 100px;
+    background: white;
+    animation: ${animate} .3s linear infinite;
 `
