@@ -1,35 +1,38 @@
-import React from 'react';
-import aboutUs from '../../aboutUs';
-import {Wrapper, Section, Photo, ContentWrapper, Title, Content, ScrollDown, ScrollDownWrapper} from './About.style.js'
-import Fade from 'react-reveal';
+import React, { Component } from 'react';
+import aboutUs from '../../aboutUs.js';
+import Slider from './AboutSlider.js';
 
-const About = () => {
-    return (
-        <Wrapper>
-            {aboutUs.map((section, idx) => {
-                return (
-                    <Section key={idx}>
-                        <Photo 
-                            src={section.picture}
-                            alt='picture' />
-                        <ContentWrapper>
-                            <Title>
-                                <Fade left cascade>
-                                    {section.title}
-                                </Fade>
-                            </Title>
-                            <Fade>
-                                <Content>{section.content}</Content>
-                            </Fade>
-                        </ContentWrapper>
-                        <ScrollDownWrapper>
-                            <ScrollDown />
-                        </ScrollDownWrapper>
-                    </Section>
-                )
-            })}
-        </Wrapper>
-    );
-};
+class About extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            slides: aboutUs,
+            iteration: 0,
+            currentSlide: {},
+        }
+    }
+    handleSlider =()=>{
+        this.setState({
+            iteration: this.state.iteration < 2 ? this.state.iteration + 1 : 0,
+        }, ()=>{
+            this.setState({
+                currentSlide: this.state.slides[this.state.iteration]
+            })
+        })
+        console.log(this.state.currentSlide)
+    }
+    componentDidMount(){
+        this.setState({
+            currentSlide: this.state.slides[0]
+        })
+    }
+    render() {
+        return (
+            <Slider 
+            {...this.state} 
+            handleSlider={this.handleSlider} />
+        );
+    }
+}
 
 export default About;
