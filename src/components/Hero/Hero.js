@@ -1,4 +1,3 @@
-import SplitText from 'react-pose-text';
 import {Title, Subtitle, Header, ParallaxImage} from './HeroStyle';
 import InfoSection from './Info/Info';
 import {Specialities} from './Specialites/Specialities';

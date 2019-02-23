@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 export const Wrapper = styled.div`
     grid-column: 2/-1;
@@ -113,6 +113,7 @@ export const Button = styled.button`
     padding: 0.5rem;
     min-height: 40px;
     color: var(--mainColor);
+    position: relative;
     
     font-size: 1.2rem;
     ${props => props.disabled 
@@ -141,9 +142,34 @@ export const Button = styled.button`
     &:focus{
         outline: none;
     }
+
+    &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 30px;
+        width: 30px;
+        background: transparent;
+        border: 3px solid grey;
+        border-top: 3px solid black;
+        z-index:10;
+        border-radius: 50%;
+        animation: ${loading} .5s linear infinite;
+    }
 `
 export const Permission = styled.div`
     grid-column: 1/-1;
     font-size: .7rem;
     text-align: justify;
+`
+
+const loading = keyframes`
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 `

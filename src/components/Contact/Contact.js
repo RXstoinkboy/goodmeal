@@ -4,7 +4,6 @@ import ContactInfo from './ContactInfo';
 import ContactMap from './ContactMap';
 import {ContactWrapper} from './ContactStyle';
 import markerIcon from '../../img/marker.png';
-import Fade from 'react-reveal';
 
 class Contact extends Component {
     constructor(){
