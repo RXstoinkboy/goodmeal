@@ -1,10 +1,34 @@
 import React from 'react';
+import aboutUs from '../../aboutUs';
+import {Wrapper, Section, Photo, ContentWrapper, Title, Content, ScrollDown, ScrollDownWrapper} from './About.style.js'
+import Fade from 'react-reveal';
 
 const About = () => {
     return (
-        <div style={{background: 'red', width: '100%', height: '100%', position: 'absolute'}}>
-           hello from About 
-        </div>
+        <Wrapper>
+            {aboutUs.map((section, idx) => {
+                return (
+                    <Section key={idx}>
+                        <Photo 
+                            src={section.picture}
+                            alt='picture' />
+                        <ContentWrapper>
+                            <Title>
+                                <Fade left cascade>
+                                    {section.title}
+                                </Fade>
+                            </Title>
+                            <Fade>
+                                <Content>{section.content}</Content>
+                            </Fade>
+                        </ContentWrapper>
+                        <ScrollDownWrapper>
+                            <ScrollDown />
+                        </ScrollDownWrapper>
+                    </Section>
+                )
+            })}
+        </Wrapper>
     );
 };
 
