@@ -11,6 +11,8 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    transition: all .3s ease;
+    ${props => props.down && (window.innerWidth > 850) ? 'background: hsla(0, 0%, 0%, .7)' : 'background: transparent'};
 `
 
 export const Logo = styled(Title)`
@@ -18,6 +20,8 @@ export const Logo = styled(Title)`
     margin-left: 1rem;
     border-bottom: 2px solid white;
     padding: 0 1rem;
+    transition: all .3s ease;
+    ${props => props.down && (window.innerWidth > 850)? 'transform: scale(.8)' : 'transform: scale(1)'};
 
     @media all and (max-width: 850px){
         font-size: 1.5rem;   
@@ -113,6 +117,8 @@ export const NavItem = styled.div`
     padding: 1rem;
     text-transform: uppercase;
     cursor: pointer;
+    transition: all .3s ease;
+    ${props => props.down && (window.innerWidth > 850)? 'transform: scale(.9)' : 'transform: scale(1)'};
 
     @media all and (max-width: 850px){
         font-size: 2rem;

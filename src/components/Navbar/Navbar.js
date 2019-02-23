@@ -24,7 +24,9 @@ class Navbar extends Component {
     }
 
     handleScroll =()=>{
-        console.dir('hi')
+        this.setState({
+            down: window.scrollY > 90 ? true : false,
+        })
     }
 
     clickHandler =()=>{
@@ -47,7 +49,7 @@ class Navbar extends Component {
     render() {
         return (
             <NavbarContent 
-                open={this.state.open} 
+                {...this.state}
                 color={this.props.color} 
                 handleClick={this.handleClick} 
                 handleColor={this.props.handleColor}
@@ -63,11 +65,12 @@ export default Navbar;
 const NavbarContent =props=> {
     const navItems = ['home', 'recipes', 'news', 'about', 'contact'];
     return (
-        <Wrapper>
+        <Wrapper
+            down={props.down}>
             <Link 
                 to='/'
                 onClick={props.handleColor}>
-                <Logo color={props.color}>
+                <Logo color={props.color} down={props.down}>
                     <Fade top cascade>
                         Good Meal
                     </Fade>
@@ -88,7 +91,7 @@ const NavbarContent =props=> {
                                 to='/' 
                                 key={item} 
                                 onClick={props.clickHandler} >
-                                <NavItem color={props.color}>
+                                <NavItem color={props.color} down={props.down}>
                                         {item}
                                 </NavItem>
                             </Link>
@@ -99,7 +102,7 @@ const NavbarContent =props=> {
                                 to={item} 
                                 key={item} 
                                 onClick={props.clickHandler} >
-                                <NavItem color={props.color}>
+                                <NavItem color={props.color} down={props.down}>
                                         {item}
                                 </NavItem>
                             </Link>
