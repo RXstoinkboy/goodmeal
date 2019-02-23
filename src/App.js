@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import {PoseGroup} from 'react-pose';
 import {RoutesContainer} from './Transition';
-import Hero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
-import Recipes from './components/Recipes/Recipes';
-import News from './components/News/News';
-import About from './components/About/About';
-import Contact from './components/Contact/Contact';
+import Loader from './components/Loader/Loader';
+const Hero = React.lazy(()=> import('./components/Hero/Hero'));
+const Contact = React.lazy(()=> import('./components/Contact/Contact'));
+const News = React.lazy(()=> import('./components/News/News'));
+const About = React.lazy(()=> import('./components/About/About'));
+const Recipes = React.lazy(()=> import('./components/Recipes/Recipes'));
 
 class App extends Component {
   constructor(props){
@@ -152,57 +153,48 @@ class App extends Component {
     console.log(this.state.date)
   }
 
-    render(){
-      return(
+  render(){
+    return(
       <React.Fragment>
       <Navbar color={this.state.color} handleColor={this.handleColor}/>
           {/* <PoseGroup> */}
             <RoutesContainer key={window.location.pathname}>
-              <Switch location={window.location}>
-                <Route 
-                  exact path='/' 
-                  render={(props)=>
-                    <Hero 
-                      // color={this.state.color} 
+              <React.Suspense fallback={<Loader />}>
+                <Switch location={window.location}>
+                  <Route 
+                    exact path='/' 
+                    render={(props)=>
+                      <Hero 
                       {...this.state}
                       handleColor={this.handleColor}
                       handleChange={this.handleChange}
-                    />
-                  } 
-                  key='home' />
-                <Route path='/recipes' component={Recipes} key='recipes' />
-                <Route path='/news' component={News} key='news'/>
-                <Route path='/about' component={About} key='about' />
-                <Route 
-                  path='/contact' 
-                  render={(props)=>
-                    <Contact 
-                      // date={this.state.date}
-                      // currentDate={this.state.currentDate}
+                      />
+                    } 
+                    key='home' />
+                  <Route path='/recipes' component={Recipes} key='recipes' />
+                  <Route path='/news' component={News} key='news'/>
+                  <Route path='/about' component={About} key='about' />
+                  <Route 
+                    path='/contact' 
+                    render={(props)=>
+                      <Contact 
                       handleChange={this.handleChange}
                       handleColor={this.handleColor}
-                      // color={this.state.color} 
                       handleInputChange={this.handleInputChange}
-                        // name={this.state.name}
-                        // email={this.state.email}
-                        // phone={this.state.phone}
-                        // message={this.state.message}
                       handleSubmit={this.handleSubmit}
-                      // buttonDisabled={this.state.buttonDisabled}
-                      // nameVal={this.state.nameVal}
-                      // phoneVal={this.state.phoneVal}
-                      // emailVal={this.state.emailVal}
-                      // messageVal={this.state.messageVal}
                       {...this.state}
-                    />
-                  } 
-                  key='contact' />
-              </Switch>
+                      />
+                    } 
+                    key='contact' />
+
+                </Switch>
+              </React.Suspense>
             </RoutesContainer>
           {/* </PoseGroup> */}
       </React.Fragment>
       )
     }
-}
-
-export default App;
+  }
+  
+  export default App;
+  

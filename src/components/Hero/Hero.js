@@ -48,12 +48,6 @@ class Hero extends Component {
         return (
             <Content 
                 charPoses={charPoses} 
-                // transform={this.state.transform} 
-                // color={this.props.color} 
-                // handleColor={this.props.handleColor}
-                // currentDate={this.props.currentDate}
-                // date={this.props.date}
-                // handleChange={this.props.handleChange}
                 {...this.state}
                 {...this.props}
                 />
@@ -80,11 +74,6 @@ const Content = props => {
                 </Subtitle>
             </Header>
             <InfoSection 
-                // color={props.color} 
-                // handleColor={props.handleColor}
-                // currentDate={props.currentDate}
-                // date={props.date}
-                // handleChange={props.handleChange}
                 {...props}
                 />
             <Specialities transform={props.transform}/>

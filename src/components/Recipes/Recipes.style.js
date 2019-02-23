@@ -26,5 +26,25 @@ export const Results = styled.div`
 `
 
 export const SearchButton = styled.button`
-    padding: 1rem;
+    font-family: 'Lato', sans-serif;
+    padding: 0.5rem;
+    margin: 1rem;
+    min-height: 40px;
+    color: var(--mainColor);
+    background: none;
+    font-size: 1.2rem;
+    border: 1px solid var(--mainColor);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    &:hover{
+        background: var(--mainColor);
+        color: white;
+        box-shadow: 0px 3px 20px grey;
+    }
+
+    &:focus{
+        outline: none;
+    }
 `
