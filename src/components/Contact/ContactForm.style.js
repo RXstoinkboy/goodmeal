@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     grid-column: 2/-1;
@@ -17,6 +17,10 @@ export const Title = styled.h2`
     font-size: 2rem;
     font-weight: 100;    
     margin-bottom: 1rem;
+
+    @media all and (max-width: 850px){
+        text-align: center;
+    }
 `
 export const Form = styled.form`
     display: grid;
@@ -40,7 +44,7 @@ export const Name = styled.input`
     background: transparent;
 
     &::placeholder{
-        color: hsla(0, 0%, 90%, 1);
+        color: hsla(0, 0%, 80%, 1);
     }
 
     &:focus{
@@ -57,7 +61,7 @@ export const Email = styled.input`
     background: transparent;
 
     &::placeholder{
-        color: hsla(0, 0%, 90%, 1);
+        color: hsla(0, 0%, 80%, 1);
     }
 
     &:focus{
@@ -78,7 +82,7 @@ export const Phone = styled.input`
     background: transparent;
 
     &::placeholder{
-        color: hsla(0, 0%, 90%, 1);
+        color: hsla(0, 0%, 80%, 1);
     }
 
     &:focus{
@@ -98,7 +102,7 @@ export const Message = styled.input`
     background: transparent;
 
     &::placeholder{
-        color: hsla(0, 0%, 90%, 1);
+        color: hsla(0, 0%, 80%, 1);
     }
 
     &:focus{
@@ -108,6 +112,7 @@ export const Message = styled.input`
         grid-column: 1/-1;
     }
 `
+
 export const Button = styled.button`
     grid-column: 1/-1;
     padding: 0.5rem;
@@ -123,7 +128,7 @@ export const Button = styled.button`
         ? 'color: var(--mainColor)' 
         : 'color: white'};
     ${props => props.disabled 
-        ? 'filter: grayscale(1) opacity(.3)' 
+        ? 'filter: grayscale(1) opacity(.5)' 
         : 'filter: grayscale(0) opacity(1)'};
     border: 1px solid var(--mainColor);
     border-radius: 3px;
@@ -142,34 +147,10 @@ export const Button = styled.button`
     &:focus{
         outline: none;
     }
-
-    &::after{
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 30px;
-        width: 30px;
-        background: transparent;
-        border: 3px solid grey;
-        border-top: 3px solid black;
-        z-index:10;
-        border-radius: 50%;
-        animation: ${loading} .5s linear infinite;
-    }
 `
+
 export const Permission = styled.div`
     grid-column: 1/-1;
     font-size: .7rem;
     text-align: justify;
-`
-
-const loading = keyframes`
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
 `

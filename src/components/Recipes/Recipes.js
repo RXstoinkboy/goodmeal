@@ -1,12 +1,47 @@
-import React from 'react';
+import {Wrapper, SearchBar, Results, SearchButton} from './Recipes.style.js';
+import React, { Component } from 'react';
 
-const Recipes = () => {
-    return (
-        <div style={{background: 'blue', width: '100%', height: '100%', position: 'absolute', display:'flex',flexDirection:'column', justifyContent:"center", alignItems:'center'}}>
-            <h1>under construction</h1>
-            <h2>Recipes feature to be added in future</h2>
-        </div>
-    );
-};
+class Recipes extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            search: '',
+            recipes: []
+        }
+    }
+    handleChange=e=>{
+        this.setState({
+            search: e.target.value
+        })
+    }
+
+    handleSearch =()=>{
+            if(this.state.search !== ''){
+                const url = `https://www.food2fork.com/api/search?key=367d2d744696f9edff53ec5b33a1ce64&q=${this.state.search}`
+                    const connectToApi = async ()=>{
+                    const data = await fetch(url);
+                    const recipes = await data.json();
+                    console.log(recipes)
+                }
+                connectToApi()
+            } else{
+                console.log('empty')
+            }
+    }
+
+    render() {
+        return (
+            <Wrapper>
+                <SearchBar 
+                    value={this.state.search} 
+                    type='search' 
+                    onChange={this.handleChange}>
+                </SearchBar>
+                <SearchButton onClick={this.handleSearch}>SEARCH</SearchButton>
+                <Results />
+            </Wrapper>
+        );
+    }
+}
 
 export default Recipes;

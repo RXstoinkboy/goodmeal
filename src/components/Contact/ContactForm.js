@@ -1,5 +1,5 @@
 import React from 'react';
-import {Wrapper, Title, Form, Button,Permission, Name, Email, Phone, Message} from './ContactForm.style';
+import {Wrapper, Title, Form, Button,Permission, Name, Email, Phone, Message, Loader} from './ContactForm.style';
 import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/themes/light.css';
 
@@ -59,7 +59,8 @@ const ContactForm = props => {
                 <Button 
                     type='submit'
                     disabled={props.buttonDisabled}
-                    buttonDisabled={props.buttonDisabled}>
+                    buttonDisabled={props.buttonDisabled}
+                    >
                     submit
                 </Button>
                 <Permission>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore ipsam molestiae cumque natus repudiandae harum perspiciatis vel animi rem aperiam in, laudantium, quaerat adipisci alias perferendis eum recusandae. Impedit dolores similique, repellat nobis in alias aliquid eveniet non, quibusdam quo nisi, ad quos. Alias voluptatibus incidunt eveniet eius delectus! Ea molestias suscipit est at a? Voluptatibus ratione quas architecto!</Permission>

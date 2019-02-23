@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
     @media all and (max-width: 850px){
         text-align: left;
-        align-items: flex-start;
+        align-items: center;
         margin: 10px;
         grid-column: 1/-1;
         border-bottom: 1px solid var(--mainColor);

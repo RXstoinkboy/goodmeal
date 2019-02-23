@@ -16,5 +16,6 @@ export const ContactWrapper = styled.div`
     @media all and (max-width: 850px){
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        justify-items: center;
     }
 `
