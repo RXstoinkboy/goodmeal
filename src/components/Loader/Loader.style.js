@@ -26,6 +26,7 @@ export const Dot = styled.div`
     width:10px;
     height:10px;
     background: white;
+    border-radius: 50%;
     margin-left: .7rem;
     animation: ${bounce} .5s ease infinite;
     animation-delay: ${props => props.delay};
