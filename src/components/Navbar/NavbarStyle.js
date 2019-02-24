@@ -116,9 +116,14 @@ export const NavItem = styled.div`
     font-family: 'Lato', sans-serif;
     padding: 1rem;
     text-transform: uppercase;
+    border-radius: 3px;
     cursor: pointer;
     transition: all .3s ease;
     ${props => props.down && (window.innerWidth > 850)? 'transform: scale(.9)' : 'transform: scale(1)'};
+
+    &:hover{
+        ${props => props.color === 'black' ? 'background: hsla(0deg, 0%, 0%, .2)' : 'background: hsla(0deg, 0%, 100%, .2)'};
+    }
 
     @media all and (max-width: 850px){
         font-size: 2rem;
@@ -136,6 +141,7 @@ export const NavItem = styled.div`
             transform: translateX(-50%);
         }
     }
+
     @media all and (max-width: 850px) and (orientation: landscape){
         font-size: 1.5rem;
     padding: .5rem;
