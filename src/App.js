@@ -165,6 +165,7 @@ class App extends Component {
                     exact path='/' 
                     render={(props)=>
                       <Hero 
+                      {...props}
                       {...this.state}
                       handleColor={this.handleColor}
                       handleChange={this.handleChange}
@@ -178,6 +179,7 @@ class App extends Component {
                     path='/contact' 
                     render={(props)=>
                       <Contact 
+                      {...props}
                       handleChange={this.handleChange}
                       handleColor={this.handleColor}
                       handleInputChange={this.handleInputChange}
@@ -186,7 +188,6 @@ class App extends Component {
                       />
                     } 
                     key='contact' />
-
                 </Switch>
               </React.Suspense>
             </RoutesContainer>

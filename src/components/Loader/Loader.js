@@ -1,10 +1,14 @@
 import React from 'react';
-import {Wrapper, Animation} from './Loader.style';
+import {Wrapper, Dot} from './Loader.style';
 
 const Loader = () => {
     return (
         <Wrapper>
-            <Animation />
+            Loading
+            <Dot delay={'0.1s'} />
+            <Dot delay={'0.2s'} />
+            <Dot delay={'0.3s'} />
+            {/* <Animation /> */}
         </Wrapper>
     );
 };

@@ -8,20 +8,25 @@ export const Wrapper = styled.div`
     height: 100vh;
     background: black;
     transform: rotate(0deg);
-    animation: ${animate} .3s linear infinite;
+    color: white;
+    font-size:3rem;
+    font-family: 'Lato';
 `
-const animate = keyframes`
-    from {
-        transform: rotate(0deg);
+
+const bounce = keyframes`
+    0%, 100%{
+        transform: translateY(15px)
     }
-    to {
-        transform: rotate(360deg);
+    50%{
+        transform: translateY(-5px)
     }
 `
 
-export const Animation = styled.div`
-    width: 100px;
-    height: 100px;
+export const Dot = styled.div`
+    width:10px;
+    height:10px;
     background: white;
-    animation: ${animate} .3s linear infinite;
+    margin-left: .7rem;
+    animation: ${bounce} .5s ease infinite;
+    animation-delay: ${props => props.delay};
 `
