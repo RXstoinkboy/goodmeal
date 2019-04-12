@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # RXstoinkboy portfolio
+=======
+# Good Meal
+>>>>>>> 06b438f6b5940ffc1f40e4400604c4060e42337a
 
 ## About
 
@@ -33,6 +37,7 @@ I have also included a popup InfoModal within the map. This was pretty cool for 
 ### Recipes
 
 You can browse your favorite recipes and get some usful information about them in Recipes section. It is just a very simple tool for fetching recipes.
+I still want to include here a little recipe app with `Food2Fork API`. Will be done in close future. 
 
 ### Preview
 You can watch working version here:

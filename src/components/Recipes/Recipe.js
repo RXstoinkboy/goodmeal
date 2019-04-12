@@ -3,7 +3,7 @@ import {Wrapper, Title, Image, ImageWrapper, Source, RecipeID, F2FURL, Publisher
 
 const Recipe = props => {
     return (
-        <Wrapper>
+        <Wrapper key={props.recipeID}>
             <ImageWrapper>
                 <Image src={props.image}/>
             </ImageWrapper>

@@ -22,6 +22,10 @@ export const SearchBar = styled.input`
     }
 `
 
+export const Results = styled.div`
+
+`
+
 export const SearchButton = styled.button`
     font-family: 'Lato', sans-serif;
     padding: 0.5rem;

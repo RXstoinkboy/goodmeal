@@ -18,8 +18,8 @@ class Recipes extends Component {
     
 
     handleSearch =()=>{
+        const url = `https://www.food2fork.com/api/search?key=367d2d744696f9edff53ec5b33a1ce64&q=${this.state.search}`
             if(this.state.search !== ''){
-                const url = `https://www.food2fork.com/api/search?key=367d2d744696f9edff53ec5b33a1ce64&q=${this.state.search}`
                 
                 fetch(url)
                         .then(data => data.json())
@@ -28,8 +28,13 @@ class Recipes extends Component {
                         })
                 
             } else {
-                console.log('empty')
-            }
+                    const connectToApi = async ()=>{
+                    const data = await fetch(url);
+                    const recipes = await data.json();
+                    console.log(recipes)
+                }
+                connectToApi()
+            } 
     }
 
     render() {
@@ -41,9 +46,7 @@ class Recipes extends Component {
                     onChange={this.handleChange}>
                 </SearchBar>
                 <SearchButton onClick={this.handleSearch}>SEARCH</SearchButton>
-             
                 <Results recipes={this.state.recipes}/>
-                
             </Wrapper>
         );
     }
